@@ -1,0 +1,11 @@
+# Site settings
+title: Erin and Dan
+email: 
+description: Find info about Erin and Dan's wedding here!
+baseurl: ""
+url: "http://erandan.com" # the base hostname & protocol for your site
+twitter_username: 
+github_username:  
+
+# Build settings
+markdown: kramdown

@@ -10,7 +10,7 @@ title: #erandan
 		body { 
 			background-color: #33294F; 
 			text-align: center;
-			padding: 8em 3em 0em 3em;
+			padding: 3em 3em 0em 3em;
 		}
 		
 		#helpfulInfo { 
@@ -40,7 +40,7 @@ title: #erandan
 			color: transparent; 
 			font-family: "Montserrat"; 
 			font-weight: 700;
-			font-size: 2em; 
+			font-size: 1.5em; 
 		}
 
 		.letter { }
@@ -109,12 +109,21 @@ title: #erandan
 	        80% { text-shadow: 0 0 #EBED89; }
 	    }
 
+	    @media (min-width: 380px) {
+	    	#titlePlaceHolder h1 span {
+	    		font-size: 2em;
+	    	}
+	    }
+
 	    @media (min-width: 458px) {
 	    	#titlePlaceHolder h1 span {
 	    		font-size: 1.35em;
 	    	}
 	    	#helpfulInfo {
 				font-size: 1.5em;
+			}
+			body {
+				padding: 6em 3em 0em 3em;
 			}
 	    }
 
