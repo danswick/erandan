@@ -1,45 +1,61 @@
 ---
-layout: default
+layout: home
 title: #erandan
 ---
 
-{% include head.html %}
-
 <div class="row u-full-width">
-	<div class="container">
+	<div class="container landing-container">
+		<div class="navbar-container">
+		<nav class="">
+			<div class="container">
+				<div class="row">
+					<ul class="navbar-list">
+						<li class="navbar-item reception">
+							<a href="#reception" class="navbar-link">Reception</a>
+							<!-- <img class="navbar-icon" src="{{site.baseurl}}/img/svg/beer-15.svg"> -->
+						</li>
+						<li class="navbar-item travel">
+							<a href="#travel" class="navbar-link">Travel</a>
+						</li>
+						<li class="navbar-item registry">
+							<a href="#registry" class="navbar-link">Registry</a>
+						</li>
+						<li class="navbar-item erandan">
+							<a href="#story" class="navbar-link">erandan</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		</div>
 		<div class="row">
+			<img class="header-rings" src="img/svg/rings.svg">
+		</div>	
+		<div class="row content-box">
 			<div class="six columns">
-				<h1 class="centerline-title left">Erin</h1>
-				<h1 class="centerline-title left">&</h1>
-				<h1 class="centerline-title left">Dan</h1>
+				<h1 class="centerline-title left">Erin & Dan</h1>
+				<h1 class="centerline-title left">Chicago, IL</h1>
+				<h1 class="centerline-title left">2016</h1>
 			</div>
 			<div class="six columns">
-				<h1 class="centerline-title right">Chicago</h1>
-				<h1 class="centerline-title right">IL</h1>
-				<h1 class="centerline-title right">2016</h1>
+				<p>We are thrilled to announce our wedding. Please join us on September 17th for an evening of celebration, family, old friends, strong drinks, and dancing. We can't wait to see you there.</p>
+				<div class="cta-button">RSVP</div>
 			</div>
 		</div>
+		<div class="row">
+			<img class="header-rings" src="img/svg/rings.svg">
+		</div>	
 	</div>
-	<nav class="header navbar u-full-width">
-		<div class="container">
-			<div class="row">
-				<ul class="navbar-list">
-					<li class="navbar-item"><a href="#" class="navbar-link">Reception</a></li>
-					<li class="navbar-item"><a href="#" class="navbar-link">Travel</a></li>
-					<li class="navbar-item"><a href="#" class="navbar-link">Registry</a></li>
-					<li class="navbar-item"><a href="#" class="navbar-link">erandan</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 </div>
 
+
 {% for post in site.categories.sections %}
-	<div class="section-wrapper">
+	<div id="{{post.section-id}}" class="section-wrapper">
 		<div class="container">
 			<div class="row">
 			<div class="column">
-				<h3>{{post.title}}</h3>
+				<span class="icon icon-{{post.section-id}}"></span>
+				<h3 class="section-title">{{post.title}}</h3>
 				{{post.content}}
 			</div>
 			</div>

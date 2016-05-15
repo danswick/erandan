@@ -1,5 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+
 /*
- * USER DEFINED SYTLES
+ *  PAGE LAYOUT SYTLES
  */
 
 
@@ -7,46 +11,109 @@
 .navbar-item {
 	list-style-type: none;
 	display: inline-block;
-	padding: 1em 1.5em;
-	font-size: 2em;
+	padding: 1em 0;
+	font-size: 1.5em;
 }
 
 .navbar-item a { text-decoration: none; }
 .navbar-item a:hover { }
 
-body { margin: 0; }
-
-.navbar {
-	background-color: #5cbddb;
-	height: 7em;
-	position: absolute;
-	bottom: 0;
+body { 
+	margin: 0; 
+	padding-bottom: 400px;
 }
 
-.navbar a {
-	color: #fff;
-	font-weight: 700;
+.navbar-container {
+	background-color: #fff;
+	height: 6em;
+	/*position: absolute;
+	bottom: 0;*/
+	z-index: 9999;
+	margin-bottom: 2em;
+}
+
+.navbar-container a {
+	color: #829961;
+	font-weight: 600;
+	font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	padding: 0 3.2vw;
 }
 
 ul, li {
 	margin: 0;
 }
 
-.navbar * { text-align: center; }
+.navbar-container * { 
+	text-align: center; 
+	transition: all 0.3s;
+}
 
-.has-docked-nav .navbar {
+.nav-almost-docked {
+	opacity: 0;
+}
+
+.nav-docked {
     position: fixed;
     top: 0;
     left: 0;
     bottom: auto;
-    z-index: 9999;
+    width: 100%;
+    background-color: #fff;
+    opacity: 1;
+    z-index: 100;
 }
 
-/* - - - - - FOOTER - - - - - - */
-.footer-map-container {
-	width: 100%;
-	background-image: url('https://api.mapbox.com/styles/v1/mapbox/satellite-v8/static/-123.099,38.405405,17,90,0/900x400?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA')	
+/* add padding above first section to 
+make up for absolutely positioned nav */
+/*nav.header + .section-wrapper {
+	background-color: pink;
+	margin-top: 3em;
+}*/
+
+/*body.has-docked-nav {
+	margin-top: 9em;
+}*/
+
+/*body.has-docked-nav nav.header + .section-wrapper {
+	background-color: blue;
+	margin-top: 10em;
+}*/
+
+.navbar-link, .navbar-icon {
+	transition: all 0.3s;
 }
+
+.navbar-item {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 2em;
+}
+
+/*.navbar-item .navbar-icon {
+	opacity: 0;
+	width: 2em;
+}*/
+
+/*a.navbar-link:hover {
+	color: #eee;
+}*/
+
+/*.navbar-icon:hover {
+	opacity: 1;
+}*/
+
+
+/*.navbar-item.reception {
+	background-image: url("/img/svg/beer-15.svg");
+}*/
+
+/* - - - - - FOOTER - - - - - - */
+/*.footer-map-container {
+	width: 100%;
+	background-image: url('https://api.mapbox.com/styles/v1/mapbox/satellite-v8/static/-123.099,38.405405,17,90,0/900x400?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA');
+}*/
 /*classic static looks better - https://api.mapbox.com/v4/mapbox.satellite/-123.1002,38.4037,15/900x400@2x.png?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA*/
 
 /* - - - - - LANDING - - - - - - */
@@ -97,3 +164,131 @@ img.headshot {
 	display: block;
 	text-align: center;
 }
+
+
+
+/*
+ *  UNIQUE ELEMENT SYTLES
+ */
+
+ /* - - - - - CENTERLINE LANDING - - - - - - */
+
+ .centerline-title {
+	
+ }
+
+ .centerline-title.left {
+	font-family: "Libre Baskerville";
+	text-align: right;
+ }
+
+ .centerline-title.right {
+
+ }
+
+ .header-rings {
+ 	width: 35px;
+ 	margin: 0 auto;
+ 	display: block;
+ }
+
+ .content-box {
+ 	border-top: 1px #333 dashed;
+ 	border-bottom: 1px #333 dashed;
+ 	padding: 5em 0 4em 0;
+ 	margin-top: 3em;
+ 	margin-bottom: 3em;
+ }
+
+ .landing-container {
+ 	height: 100vh;
+ }
+
+ .cta-button {
+ 	padding: 0.7em 1em 0.7em 1em;
+ 	background-color: #A4BC82;
+ 	color: #fff;
+ 	font-weight: 700;
+ 	display: inline-block;
+ 	cursor: pointer;
+ 	transition: all 0.3s;
+ 	border-radius: 0.3em;
+ 	border-bottom: #829961 solid 2px;
+ 	margin: 0 0 2em 0;
+ }
+ .cta-button:hover {
+	background-color: #829961;
+ }
+.cta-button a {
+	text-decoration: none;
+	color: #fff;
+}
+
+
+ .icon {
+ 	display: inline-block;
+ 	background-repeat: no-repeat;
+	background-position: center center;
+	width: 2em;
+	height: 2em;
+	background-size: 2em;
+	margin-right: 1em;
+ }
+ .small-icon {
+ 	display: inline-block;
+ 	background-repeat: no-repeat;
+	background-position: center center;
+ 	width: 1em;
+ 	height: 1em;
+ 	margin-right: 0.3em;
+ 	background-size: 1em;
+ 	margin-bottom: -2px;
+ }
+
+ .icon-travel { background-image: url("/img/svg/airport-15.svg"); }
+ .icon-reception { background-image: url("/img/svg/beer-15.svg"); }
+ .icon-registry { background-image: url("/img/svg/gift-15.svg"); }
+ .icon-story { background-image: url("/img/svg/heart-15.svg"); }
+ .icon-transit { background-image: url("/img/svg/rail-15.svg"); }
+ .icon-restaurant { background-image: url("/img/svg/restaurant-15.svg"); }
+ .icon-parking { background-image: url("/img/svg/parking-15.svg"); }
+ .icon-mail { background-image: url("/img/svg/post-15.svg"); }
+ .icon-bike { background-image: url("/img/svg/bicycle-15.svg"); }
+ .icon-car { background-image: url("/img/svg/car-15.svg"); }
+ .icon-amusement {background-image: url("/img/svg/attraction-15.svg");}
+ .icon-clothing { background-image: url("/img/svg/clothing-store-15.svg"); }
+ .icon-lodging { background-image: url("/img/svg/lodging-15.svg"); }
+
+ .section-title {
+ 	display: inline-block;
+ }
+
+ #reception li {
+ 	list-style: none;
+ }
+
+ .section-map {
+ 	height: 300px;
+ }
+
+ div.beach-image {
+	width: auto;
+	height: 400px;
+	/*background-image: url('https://api.mapbox.com/styles/v1/mapbox/satellite-v8/static/-123.099,38.405405,17,90,0/900x400?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA');*/
+	position: fixed;
+	/*background-repeat: no-repeat;*/
+	bottom: 0;
+	z-index: 0;
+	/*background-attachment: fixed;*/
+ }
+div.beach-image img {
+	position: relative;
+	width: auto;
+}
+
+ .content-container {
+ 	z-index: 100;
+ 	position: relative;
+ 	background-color: #fff;
+ 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.8);
+ }
