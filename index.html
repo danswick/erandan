@@ -1,154 +1,71 @@
 ---
+layout: home
 title: #erandan
 ---
 
-{% include head.html %}
-<body><div class="container">
-	<style>
-		@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-		body { 
-			background-color: #33294F; 
-			text-align: center;
-			padding: 3em 3em 0em 3em;
-		}
-		
-		#helpfulInfo { 
-			color: #EBED89; 
-			font-family: "Montserrat";
-			font-weight: 400;
-			font-size: 1em;
-			padding: 1em 0em 0em 0em;
-		}
-
-		#surveyButton {
-			margin: 2em auto;
-			background-color: #33294F;
-			color: #EBED89;
-			border: 2px solid #EBED89;
-			display: inline-block;
-			text-decoration: none;
-			padding: 1em;
-		}
-
-		#surveyButton:hover { 
-			background-color: #4C3C75; 
-			transition: all linear 0.2s;
-		}
-
-		#titlePlaceholder h1 span { 
-			color: transparent; 
-			font-family: "Montserrat"; 
-			font-weight: 700;
-			font-size: 1.5em; 
-		}
-
-		.letter { }
-
-		.hash { animation: hash_animate 20s infinite; z-index: 9; left: -0.65em; }
-	    .e { animation: e_animate 20s infinite linear; z-index: 8; left: 0; }
-	    .r { animation: r_animate 20s infinite linear; z-index: 7; left: 0.85em; }
-	    .a { animation: a_animate 20s infinite linear; z-index: 6; left: 1.55em; }
-	    .n { animation: n_animate 20s infinite linear; z-index: 5; left: 2.15em; }
-	    .d { animation: d_animate 20s infinite linear; z-index: 4; left: 2.57em; }
-	    .a { animation: hash_animate 20s infinite linear; z-index: 3; left: 2.85em; }
-	    .n { animation: e_animate 20s infinite linear; z-index: 2; left: 3.75em; }
-	    .a2 { animation: hash_animate 20s infinite; z-index: 9; left: -0.65em; }
-	    .n2 { animation: e_animate 20s infinite linear; z-index: 8; left: 0; }
-
-	    @keyframes hash_animate {
-	        0%, 100% { text-shadow: 0 0 #33294F; }
-	        20% { text-shadow: 0 0 #3B4060; }
-	        40% { text-shadow: 0 0 #677F6B; }
-	        60% { text-shadow: 0 0 #8EAA70; }
-	        80% { text-shadow: 0 0 #EBED89; }
-	    }
-
-	    @keyframes e_animate {
-	        0%, 100% {
-	        /*2*/ text-shadow: 0 0 #EBED89; }
-	        20% { text-shadow: 0 0 #33294F; }
-	        40% { text-shadow: 0 0 #3B4060; }
-	        60% { text-shadow: 0 0 #677F6B; }
-	        80% { text-shadow: 0 0 #8EAA70; }
-	    }
-
-	    @keyframes r_animate {
-	        0%, 100% {
-	        /*3*/ text-shadow: 0 0 #8EAA70; }
-	        20% { text-shadow: 0 0 #EBED89; }
-	        40% { text-shadow: 0 0 #33294F; }
-	        60% { text-shadow: 0 0 #3B4060; }
-	        80% { text-shadow: 0 0 #677F6B; }
-	    }
-
-	    @keyframes a_animate {
-	        0%, 100% {
-	        /*4*/ text-shadow: 0 0 #677F6B; }
-	        20% { text-shadow: 0 0 #8EAA70; }
-	        40% { text-shadow: 0 0 #EBED89; }
-	        60% { text-shadow: 0 0 #33294F; }
-	        80% { text-shadow: 0 0 #3B4060; }
-	    }
-
-	    @keyframes n_animate {
-	        0%, 100% {
-	        /*5*/ text-shadow: 0 0 #3B4060; }
-	        20% { text-shadow: 0 0 #677F6B; }
-	        40% { text-shadow: 0 0 #8EAA70; }
-	        60% { text-shadow: 0 0 #EBED89; }
-	        80% { text-shadow: 0 0 #33294F; }
-	    }
-
-	    @keyframes d_animate {
-	        0%, 100% {
-	        /*6*/ text-shadow: 0 0 #33294F; }
-	        20% { text-shadow: 0 0 #3B4060; }
-	        40% { text-shadow: 0 0 #677F6B; }
-	        60% { text-shadow: 0 0 #8EAA70; }
-	        80% { text-shadow: 0 0 #EBED89; }
-	    }
-
-	    @media (min-width: 380px) {
-	    	#titlePlaceHolder h1 span {
-	    		font-size: 2em;
-	    	}
-	    }
-
-	    @media (min-width: 458px) {
-	    	#titlePlaceHolder h1 span {
-	    		font-size: 1.35em;
-	    	}
-	    	#helpfulInfo {
-				font-size: 1.5em;
-			}
-			body {
-				padding: 6em 3em 0em 3em;
-			}
-	    }
-
-	    @media (min-width: 908px) {
-		    #titlePlaceholder h1 span { 
-				font-size: 2.5em; 
-			}
-	    }
-	</style>
-	<div id="titlePlaceholder" class="u-full-width">
-		<h1>
-			<span class="letter hash">#</span>
-	        <span class="letter e">e</span>
-	        <span class="letter r">r</span>
-	        <span class="letter a">a</span>
-	        <span class="letter n">n</span>
-	        <span class="letter d">d</span>
-	        <span class="letter a2">a</span>
-	        <span class="letter n2">n</span>
-        </h1>
+<div class="row u-full-width">
+	<div class="container landing-container">
+		<div class="navbar-container full-width-nav">
+		<nav class="">
+			<a href="#" id="menu-toggle" class="menu-icon">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<div class="container">
+				<div class="row">
+					<ul class="navbar-list">
+						<li class="navbar-item reception">
+							<a href="#reception" class="navbar-link">Reception</a>
+							<!-- <img class="navbar-icon" src="{{site.baseurl}}/img/svg/beer-15.svg"> -->
+						</li>
+						<li class="navbar-item travel">
+							<a href="#travel" class="navbar-link">Travel</a>
+						</li>
+						<li class="navbar-item registry">
+							<a href="#registry" class="navbar-link">Registry</a>
+						</li>
+						<li class="navbar-item erandan">
+							<a href="#story" class="navbar-link">erandan</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		</div>
+		<div class="row header-rings">
+			<img class="" src="img/svg/rings.svg">
+		</div>	
+		<div class="row content-box">
+			<div class="six columns">
+				<h1 class="centerline-title left">Erin & Dan</h1>
+				<h1 class="centerline-title left">Chicago, IL</h1>
+				<h1 class="centerline-title left">2016</h1>
+			</div>
+			<div class="six columns">
+				<p>We are thrilled to announce our wedding. Please join us on September 17th for an evening of celebration, family, old friends, strong drinks, and dancing. We can't wait to see you there.</p>
+			</div>
+			<div class="twelve columns">
+				<div class="cta-button"><a class="rsvp-button" href="#rsvp">RSVP</a></div>
+			</div>
+		</div>
+		<div class="row header-rings">
+			<img class="" src="img/svg/rings.svg">
+		</div>	
 	</div>
-	<div id="helpfulInfo">
-		<p>We're picking food, writing vows, and practicing our dance moves. More helpful info will be here very soon!</p>
-		<p>To share your contact info with us, click the button: </p>
-		<a href="https://docs.google.com/forms/d/1YAB33UMzqk7Oz6Keyxl_FmCMsmbApqqF8ot-54Njqp8/viewform" id="surveyButton">Your contact info</a>
+</div>
+
+
+{% for post in site.categories.sections %}
+	<div id="{{post.section-id}}" class="section-wrapper">
+		<div class="container">
+			<div class="row">
+			<div class="column">
+				<span class="icon icon-{{post.section-id}}"></span>
+				<h3 class="section-title">{{post.title}}</h3>
+				{{post.content}}
+			</div>
+			</div>
+		</div>
 	</div>
-</div></body>
-</html>
+{% endfor %}

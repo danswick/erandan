@@ -1,57 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+
 /*
- * USER DEFINED SYTLES
+ *  PAGE LAYOUT SYTLES
  */
 
 
 /* - - - - - HEADER - - - - - - */
 
-.navbar-item {
-	list-style-type: none;
-	display: inline-block;
-	padding: 1em 1.5em;
-	font-size: 2em;
-}
-
 .navbar-item a { text-decoration: none; }
 .navbar-item a:hover { }
 
-body { margin: 0; }
-
-.navbar {
-	background-color: #5cbddb;
-	height: 7em;
-	position: absolute;
-	bottom: 0;
+body { 
+	margin: 0; 
+	padding-bottom: 400px;
 }
 
-/*.navbar-spacer { 
-	height: 7em;
-	display: none;
-}*/
-
-.navbar a {
-	color: #fff;
-	font-weight: 700;
+.navbar-container {
+	background-color: #fff;
+	z-index: 9999;
 }
 
-ul, li {
+.navbar-container a {
+	color: #829961;
+	font-weight: 600;
+	font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+}
+
+.navbar-container ul, .navbar-container li {
 	margin: 0;
 }
 
-.navbar * { text-align: center; }
+.navbar-container * { 
+	text-align: center; 
+	transition: all 0.3s;
+}
 
-.has-docked-nav .navbar {
+.nav-almost-docked {
+	opacity: 0;
+}
+
+.nav-docked {
     position: fixed;
     top: 0;
     left: 0;
     bottom: auto;
-    z-index: 9999;
+    width: 100%;
+    background-color: #fff;
+    opacity: 1;
+    z-index: 100;
 }
 
-/*.has-docked-nav .navbar-spacer {
-	display: block;
+nav.open {
+
+}
+
+/* add padding above first section to 
+make up for absolutely positioned nav */
+/*nav.header + .section-wrapper {
+	background-color: pink;
+	margin-top: 3em;
 }*/
 
+/*body.has-docked-nav {
+	margin-top: 9em;
+}*/
+
+/*body.has-docked-nav nav.header + .section-wrapper {
+	background-color: blue;
+	margin-top: 10em;
+}*/
+
+.navbar-link, .navbar-icon {
+	transition: all 0.3s;
+}
+
+.navbar-item {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 2em;
+}
+
+/*.navbar-item .navbar-icon {
+	opacity: 0;
+	width: 2em;
+}*/
+
+/*a.navbar-link:hover {
+	color: #eee;
+}*/
+
+/*.navbar-icon:hover {
+	opacity: 1;
+}*/
+
+
+/*.navbar-item.reception {
+	background-image: url("/img/svg/beer-15.svg");
+}*/
+
+/* - - - - - FOOTER - - - - - - */
+/*.footer-map-container {
+	width: 100%;
+	background-image: url('https://api.mapbox.com/styles/v1/mapbox/satellite-v8/static/-123.099,38.405405,17,90,0/900x400?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA');
+}*/
+/*classic static looks better - https://api.mapbox.com/v4/mapbox.satellite/-123.1002,38.4037,15/900x400@2x.png?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA*/
 
 /* - - - - - LANDING - - - - - - */
 
@@ -101,3 +157,345 @@ img.headshot {
 	display: block;
 	text-align: center;
 }
+
+
+
+/*
+ *  UNIQUE ELEMENT SYTLES
+ */
+
+ /* - - - - - CENTERLINE LANDING - - - - - - */
+
+ .centerline-title {
+	
+ }
+
+ .centerline-title.left {
+	font-family: "Libre Baskerville";
+	text-align: right;
+ }
+
+ .centerline-title.right {
+
+ }
+
+ .content-box {
+ 	border-top: 1px #333 dashed;
+ 	border-bottom: 1px #333 dashed;
+ 	padding: 5em 0 4em 0;
+ 	margin-top: 3em;
+ 	margin-bottom: 3em;
+ }
+
+ .landing-container {
+ 	height: 100vh;
+ }
+
+ .cta-button {
+ 	padding: 0.7em 1em 0.7em 1em;
+ 	background-color: #A4BC82;
+ 	color: #fff;
+ 	font-weight: 700;
+ 	cursor: pointer;
+ 	transition: all 0.3s;
+ 	border-radius: 0.3em;
+ 	border-bottom: #829961 solid 2px;
+ 	margin: 3em auto 2em auto;
+ 	width: 6em;
+ 	clear: both;
+ 	text-align: center;
+ }
+ .cta-button:hover {
+	background-color: #829961;
+ }
+.cta-button a {
+	text-decoration: none;
+	color: #fff;
+}
+table .cta-button {
+	padding: 0.5em 0.5em;
+	margin: 0;
+}
+
+ .icon {
+ 	display: inline-block;
+ 	background-repeat: no-repeat;
+	background-position: center center;
+	width: 2em;
+	height: 2em;
+	background-size: 2em;
+	margin-right: 0.5em;
+ }
+ .small-icon {
+ 	display: inline-block;
+ 	background-repeat: no-repeat;
+	background-position: center center;
+ 	width: 1em;
+ 	height: 1em;
+ 	margin-right: 0.3em;
+ 	background-size: 1em;
+ 	margin-bottom: -2px;
+ }
+
+ .icon-travel { background-image: url("/img/svg/airport-15.svg"); }
+ .icon-reception { background-image: url("/img/svg/beer-15.svg"); }
+ .icon-registry { background-image: url("/img/svg/gift-15.svg"); }
+ .icon-story { background-image: url("/img/svg/heart-15.svg"); }
+ .icon-transit { background-image: url("/img/svg/rail-15.svg"); }
+ .icon-restaurant { background-image: url("/img/svg/restaurant-15.svg"); }
+ .icon-parking { background-image: url("/img/svg/parking-15.svg"); }
+ .icon-mail { background-image: url("/img/svg/post-15.svg"); }
+ .icon-bike { background-image: url("/img/svg/bicycle-15.svg"); }
+ .icon-car { background-image: url("/img/svg/car-15.svg"); }
+ .icon-amusement {background-image: url("/img/svg/attraction-15.svg");}
+ .icon-clothing { background-image: url("/img/svg/clothing-store-15.svg"); }
+ .icon-lodging { background-image: url("/img/svg/lodging-15.svg"); }
+ .icon-rsvp { background-image: url("/img/svg/post-15.svg"); }
+
+ .section-title {
+ 	display: inline-block;
+ }
+
+ #reception li {
+ 	list-style: none;
+ }
+
+ .section-map {
+ 	height: 300px;
+ 	margin-bottom: 2em;
+ }
+
+div.beach-image {
+	height: 400px;
+	width: 100%;
+	background-image: url('../img/beach.jpg');
+	background-size: cover;
+	background-position: center center;
+	position: fixed;
+	bottom: 0;
+	z-index: 0;
+}
+
+ .content-container {
+ 	z-index: 100;
+ 	position: relative;
+ 	background-color: #fff;
+ 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.8);
+ }
+
+ .section-wrapper h4 {
+	font-family: "Open Sans";
+	font-weight: 400;
+ 	color: #555;
+ 	margin-top: 2em;
+ }
+
+ .section-wrapper {
+ 	margin-top: 4em;
+ }
+
+/* 
+ *  FORM ELEMENTS 
+ */
+
+form {
+	margin-top: 2em;
+	padding: 1.5em;
+	border: 1px dashed #ccc;
+}
+
+.radio-side input, .radio-side label {
+	display: inline-block;
+}
+
+form * {
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-weight: 400;
+}
+
+.full-width-input { 
+	width: 100%;
+}
+
+form .row {
+	margin-top: 1.5em;
+}
+
+ /* Larger than mobile */
+@media (min-width: 320px) {
+	body {
+		padding-bottom: 270px
+	}
+
+	.open .navbar-item a {
+		padding: 0 0 0 2em;
+		margin: 1em 0;
+	}
+	.navbar-container a {
+		padding-left: 2em;
+	}
+	a.menu-icon {
+		z-index: 200;
+		display: block;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    padding: 2em;
+	}
+	.menu-icon span {
+		-webkit-transition: all .3s ease-in-out;
+	    transition: all .3s ease-in-out;
+	    background-color: #A4BC82;
+	    border-radius: 3px;
+	    height: 4px;
+	    width: 30px;
+	    display: block;
+	    margin-bottom: 5px;
+	}
+	.open .menu-icon span {
+		width: 31px;
+		-webkit-transform-origin: 0;
+		-ms-transform-origin: 0;
+		transform-origin: 0;
+		margin-bottom: 7px;
+	}
+
+	.open .menu-icon span:nth-of-type(2) {
+		opacity: 0;
+	} 
+	.open .menu-icon span:first-of-type {
+		-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	}
+	.open .menu-icon span:last-of-type {
+		-webkit-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	}
+	nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.nav-docked {
+		height: 70px;
+	}
+
+	nav .container ul {
+		-webkit-transition: all .3s ease-in-out;
+	    transition: all .3s ease-in-out;
+	    -webkit-transform: translateX(-100%);
+	    -ms-transform: translateX(-100%);
+	    transform: translateX(-100%);
+	    position: fixed;
+		height: 100%;
+	    width: 250px;
+	    text-align: left;
+	    top: 0;
+	    left: 0;
+	    padding-top: 5em;
+	}
+	.open .container ul {
+	    -webkit-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	    transform: translateX(0);
+	    background-color: #444;
+	}
+	.open ul .navbar-item {
+		display: block;
+		text-align: left;
+		margin: 2em 0;
+	}
+	.navbar-container {
+		margin-bottom: 0;
+		height: 5em;
+	}
+
+	.centerline-title.left {
+		font-family: "Libre Baskerville";
+		text-align: center;
+		font-size: 2em;
+		margin-bottom: 1rem;
+	}
+	.header-title {
+		display: inline-block;
+	}
+	.header-rings img {
+		display: none;
+	}
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+	h1 {
+		font-size: 4.0rem;
+	}
+
+	.header-rings img {
+	 	width: 35px;
+	 	margin: 0 auto;
+	 	display: block;
+	}
+	.centerline-title.left {
+		text-align: right;
+		font-size: 2.5em;
+		margin-bottom: 2rem;
+	}
+}
+
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+	body {
+		padding-bottom: 400px;
+	}
+
+	.navbar-container a {
+		padding: 0 3.2vw;
+	}
+
+	h1 {
+		font-size: 5.0rem;
+	}
+	a.menu-icon {
+	    display: none;
+	}
+
+	.navbar-container {
+		margin: 0 0 2em 0;
+		height: 6em;
+	}
+	nav .container ul {
+		-webkit-transition: all .3s ease-in-out;
+	    transition: all .3s ease-in-out;
+	    -webkit-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	    transform: translateX(0);
+	    position: relative;
+	    width: 100%;
+	    text-align: center;
+	    top: auto;
+	    left: auto;
+	    padding-top: 0;
+	}
+	.nav-docked {
+		height: 5em;
+	}
+	.header-title {
+		display: none;
+	}
+	.navbar-item {
+		list-style-type: none;
+		display: inline-block;
+		padding: 1em 0;
+		font-size: 1.5em;
+	}
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

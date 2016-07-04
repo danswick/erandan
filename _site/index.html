@@ -1,4 +1,7 @@
-<head>
+<!DOCTYPE html>
+<html>
+
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -6,160 +9,253 @@
   <title>Erin and Dan</title>
   <meta name="description" content="Find info about Erin and Dan's wedding here!">
 	<script src="/js/jquery-2.1.4.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.js'></script>
 	<link href='https://fonts.googleapis.com/css?family=Alegreya:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/main.css">
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
   <link rel="canonical" href="http://erandan.com/">
   <link rel="alternate" type="application/rss+xml" title="Erin and Dan" href="http://erandan.com/feed.xml" />
 </head>
 
-<body><div class="container">
-	<style>
-		@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-		body { 
-			background-color: #33294F; 
-			text-align: center;
-			padding: 3em 3em 0em 3em;
-		}
-		
-		#helpfulInfo { 
-			color: #EBED89; 
-			font-family: "Montserrat";
-			font-weight: 400;
-			font-size: 1em;
-			padding: 1em 0em 0em 0em;
-		}
-
-		#surveyButton {
-			margin: 2em auto;
-			background-color: #33294F;
-			color: #EBED89;
-			border: 2px solid #EBED89;
-			display: inline-block;
-			text-decoration: none;
-			padding: 1em;
-		}
-
-		#surveyButton:hover { 
-			background-color: #4C3C75; 
-			transition: all linear 0.2s;
-		}
-
-		#titlePlaceholder h1 span { 
-			color: transparent; 
-			font-family: "Montserrat"; 
-			font-weight: 700;
-			font-size: 1.5em; 
-		}
-
-		.letter { }
-
-		.hash { animation: hash_animate 20s infinite; z-index: 9; left: -0.65em; }
-	    .e { animation: e_animate 20s infinite linear; z-index: 8; left: 0; }
-	    .r { animation: r_animate 20s infinite linear; z-index: 7; left: 0.85em; }
-	    .a { animation: a_animate 20s infinite linear; z-index: 6; left: 1.55em; }
-	    .n { animation: n_animate 20s infinite linear; z-index: 5; left: 2.15em; }
-	    .d { animation: d_animate 20s infinite linear; z-index: 4; left: 2.57em; }
-	    .a { animation: hash_animate 20s infinite linear; z-index: 3; left: 2.85em; }
-	    .n { animation: e_animate 20s infinite linear; z-index: 2; left: 3.75em; }
-	    .a2 { animation: hash_animate 20s infinite; z-index: 9; left: -0.65em; }
-	    .n2 { animation: e_animate 20s infinite linear; z-index: 8; left: 0; }
-
-	    @keyframes hash_animate {
-	        0%, 100% { text-shadow: 0 0 #33294F; }
-	        20% { text-shadow: 0 0 #3B4060; }
-	        40% { text-shadow: 0 0 #677F6B; }
-	        60% { text-shadow: 0 0 #8EAA70; }
-	        80% { text-shadow: 0 0 #EBED89; }
-	    }
-
-	    @keyframes e_animate {
-	        0%, 100% {
-	        /*2*/ text-shadow: 0 0 #EBED89; }
-	        20% { text-shadow: 0 0 #33294F; }
-	        40% { text-shadow: 0 0 #3B4060; }
-	        60% { text-shadow: 0 0 #677F6B; }
-	        80% { text-shadow: 0 0 #8EAA70; }
-	    }
-
-	    @keyframes r_animate {
-	        0%, 100% {
-	        /*3*/ text-shadow: 0 0 #8EAA70; }
-	        20% { text-shadow: 0 0 #EBED89; }
-	        40% { text-shadow: 0 0 #33294F; }
-	        60% { text-shadow: 0 0 #3B4060; }
-	        80% { text-shadow: 0 0 #677F6B; }
-	    }
-
-	    @keyframes a_animate {
-	        0%, 100% {
-	        /*4*/ text-shadow: 0 0 #677F6B; }
-	        20% { text-shadow: 0 0 #8EAA70; }
-	        40% { text-shadow: 0 0 #EBED89; }
-	        60% { text-shadow: 0 0 #33294F; }
-	        80% { text-shadow: 0 0 #3B4060; }
-	    }
-
-	    @keyframes n_animate {
-	        0%, 100% {
-	        /*5*/ text-shadow: 0 0 #3B4060; }
-	        20% { text-shadow: 0 0 #677F6B; }
-	        40% { text-shadow: 0 0 #8EAA70; }
-	        60% { text-shadow: 0 0 #EBED89; }
-	        80% { text-shadow: 0 0 #33294F; }
-	    }
-
-	    @keyframes d_animate {
-	        0%, 100% {
-	        /*6*/ text-shadow: 0 0 #33294F; }
-	        20% { text-shadow: 0 0 #3B4060; }
-	        40% { text-shadow: 0 0 #677F6B; }
-	        60% { text-shadow: 0 0 #8EAA70; }
-	        80% { text-shadow: 0 0 #EBED89; }
-	    }
-
-	    @media (min-width: 380px) {
-	    	#titlePlaceHolder h1 span {
-	    		font-size: 2em;
-	    	}
-	    }
-
-	    @media (min-width: 458px) {
-	    	#titlePlaceHolder h1 span {
-	    		font-size: 1.35em;
-	    	}
-	    	#helpfulInfo {
-				font-size: 1.5em;
-			}
-			body {
-				padding: 6em 3em 0em 3em;
-			}
-	    }
-
-	    @media (min-width: 908px) {
-		    #titlePlaceholder h1 span { 
-				font-size: 2.5em; 
-			}
-	    }
-	</style>
-	<div id="titlePlaceholder" class="u-full-width">
-		<h1>
-			<span class="letter hash">#</span>
-	        <span class="letter e">e</span>
-	        <span class="letter r">r</span>
-	        <span class="letter a">a</span>
-	        <span class="letter n">n</span>
-	        <span class="letter d">d</span>
-	        <span class="letter a2">a</span>
-	        <span class="letter n2">n</span>
-        </h1>
+  <body>
+    <div class="content-container">
+      <div class="row u-full-width">
+	<div class="container landing-container">
+		<div class="navbar-container full-width-nav">
+		<nav class="">
+			<a href="#" id="menu-toggle" class="menu-icon">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<div class="container">
+				<div class="row">
+					<ul class="navbar-list">
+						<li class="navbar-item reception">
+							<a href="#reception" class="navbar-link">Reception</a>
+							<!-- <img class="navbar-icon" src="/img/svg/beer-15.svg"> -->
+						</li>
+						<li class="navbar-item travel">
+							<a href="#travel" class="navbar-link">Travel</a>
+						</li>
+						<li class="navbar-item registry">
+							<a href="#registry" class="navbar-link">Registry</a>
+						</li>
+						<li class="navbar-item erandan">
+							<a href="#story" class="navbar-link">erandan</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		</div>
+		<div class="row header-rings">
+			<img class="" src="img/svg/rings.svg">
+		</div>	
+		<div class="row content-box">
+			<div class="six columns">
+				<h1 class="centerline-title left">Erin & Dan</h1>
+				<h1 class="centerline-title left">Chicago, IL</h1>
+				<h1 class="centerline-title left">2016</h1>
+			</div>
+			<div class="six columns">
+				<p>We are thrilled to announce our wedding. Please join us on September 17th for an evening of celebration, family, old friends, strong drinks, and dancing. We can't wait to see you there.</p>
+			</div>
+			<div class="twelve columns">
+				<div class="cta-button"><a class="rsvp-button" href="#rsvp">RSVP</a></div>
+			</div>
+		</div>
+		<div class="row header-rings">
+			<img class="" src="img/svg/rings.svg">
+		</div>	
 	</div>
-	<div id="helpfulInfo">
-		<p>We're picking food, writing vows, and practicing our dance moves. More helpful info will be here very soon!</p>
-		<p>To share your contact info with us, click the button: </p>
-		<a href="https://docs.google.com/forms/d/1YAB33UMzqk7Oz6Keyxl_FmCMsmbApqqF8ot-54Njqp8/viewform" id="surveyButton">Your contact info</a>
+</div>
+
+
+
+	<div id="reception" class="section-wrapper">
+		<div class="container">
+			<div class="row">
+			<div class="column">
+				<span class="icon icon-reception"></span>
+				<h3 class="section-title">Reception</h3>
+				<p>We’re pumped to spend an evening with all of our favorite people. We’ll have food to eat, drinks to drinks, great company, and good music to dance to. There may even be a speech or two.</p>
+
+<p>Join us for dinner, drinks, and plenty of dancing.</p>
+
+<h4 id="getting-there">Getting there</h4>
+
+<!-- <figure class="section-image">
+    <img class="u-max-full-width" src="https://api.mapbox.com/styles/v1/danswick/cio0yit1t003dagkljbja0jsc/static/-87.697947,41.946739,15.15,0.00,45.00/800x250@2x?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA">
+    <figcaption>Trigger Chicago. 2810 W Addison St.</figcaption>
+</figure> -->
+<div id="receptionMap" class="section-map"></div>
+
+<p>We’re busy finding you the best transportation details, but rest assured that you’ll be able to take <span class="small-icon icon-transit"></span>, <span class="small-icon icon-car"></span>, or <span class="small-icon icon-bike"></span>!</p>
+
+<h4 id="attire">Attire</h4>
+
+<p>Dress your best, but make sure your shoes are compfortable enough to hit the dance floor.</p>
+
+<h4 id="food-and-drink">Food and drink</h4>
+
+<p>We’re doing tastings and picking out the most delicious entrees, appetizers, and desserts for you. Check back here for more details!</p>
+
+<p>Come thirsty, becaue we’ll have lots to drink, including a bourbon cocktail and selection of beers and wines.</p>
+
+<script type="text/javascript">
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
+var map = new mapboxgl.Map({
+    container: 'receptionMap', // container id
+    style: 'mapbox://styles/danswick/cio85vga7001jakm9onnuqk7e', //stylesheet location
+    center: [-87.698467, 41.946832], // starting position
+    zoom: 16 // starting zoom
+});
+map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
+map.scrollZoom.disable();
+</script>
+
+
+			</div>
+			</div>
+		</div>
 	</div>
-</div></body>
+
+	<div id="travel" class="section-wrapper">
+		<div class="container">
+			<div class="row">
+			<div class="column">
+				<span class="icon icon-travel"></span>
+				<h3 class="section-title">Traveling to Chicago</h3>
+				<p>We spent the bulk of our twenties living in and learning to love the great city of Chicago. Many of our family and friends live right down the road, but if you’re joining us from out of town, we’d love to make a few suggestions for what to do and see while you’re here.</p>
+
+<h4 id="lodging">Lodging</h4>
+
+<p><span class="small-icon icon-lodging"></span>We’ve lined up a small block of rooms at Spring Hill Suites on the Northwest side. Reserve a room by <strong>August 17th</strong> to get your spot.</p>
+
+<div class="cta-button"><a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=McMillan%20Wedding%5ECHICO%60MCMMCMC%7CMCMMCMA%60135.00%60USD%60false%602%609/16/16%609/18/16%608/17/16&amp;app=resvlink&amp;stop_mobi=yes">Reserve a room</a></div>
+
+<p><span class="small-icon icon-lodging"></span>If you’d rather soak up a little more local flavor, we highly recommend checking out AirBnB.</p>
+
+<div class="cta-button">
+    <a target="_blank" href="https://www.airbnb.com/s/Chicago--IL--United-States?checkin=09%2F16%2F2016&amp;checkout=09%2F18%2F2016&amp;guests=&amp;zoom=13&amp;search_by_map=true&amp;sw_lat=41.86523769935195&amp;sw_lng=-87.69389481253131&amp;ne_lat=41.9482705828654&amp;ne_lng=-87.61098236746295&amp;ss_id=rbs2zdcy&amp;s_tag=j5aYUFch">Chicago AirBnB</a>
+</div>
+
+<!-- #### Our favorite food and drinks -->
+
+<p>We’re pulling together a fun list of places to see while you’re in town, including our favorite food, drink, and sights throughout Chicago. Check back soon!</p>
+
+<!-- #### See the sights -->
+
+<!-- <span class="small-icon icon-amusement"></span><span class="small-icon icon-restaurant"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt optio ipsum necessitatibus fuga deleniti non porro, recusandae enim, facilis, voluptates rerum quae consequuntur cum adipisci libero ad velit hic sapiente. -->
+
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="registry" class="section-wrapper">
+		<div class="container">
+			<div class="row">
+			<div class="column">
+				<span class="icon icon-registry"></span>
+				<h3 class="section-title">Registry</h3>
+				<figure class="section-image">
+    <img class="u-max-full-width" src="" />
+    <figcaption></figcaption>
+</figure>
+
+<!-- |        Place         |   What they have  |            Go to there            |
+|----------------------|-------------------|-----------------------------------|
+| REI                  | Water bottles     | <span class="cta-button">BUY</span> |
+| Restoration Hardware | $1,000 coat hooks | <span class="cta-button">BUY</span> |
+| Honeymoon fund       | Precious memories | <span class="cta-button">BUY</span> |
+ -->
+
+<p>Coming soon!</p>
+
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="story" class="section-wrapper">
+		<div class="container">
+			<div class="row">
+			<div class="column">
+				<span class="icon icon-story"></span>
+				<h3 class="section-title">Story</h3>
+				<p>Coming soon!</p>
+
+<figure class="section-image">
+    <img class="u-max-full-width" src="/img/fyonts.jpeg" />
+    <figcaption></figcaption>
+</figure>
+
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="rsvp" class="section-wrapper">
+		<div class="container">
+			<div class="row">
+			<div class="column">
+				<span class="icon icon-rsvp"></span>
+				<h3 class="section-title">RSVP</h3>
+				<p>In order to save everyone a trip to the post office, we will be collecting RSVPs electronically. Before you fill out the form below, please note:</p>
+
+<ul>
+  <li>We are having a smaller, more intimate ceremony on Friday, September 16th and, unfortunately, are not able to invite as many people as we will for the reception on Saturday. Please check your invitation if you’re not sure which to attend. And get a hold of us if you’re still not sure!</li>
+  <li>We would love to know if you will be joining us by <strong>September 5th</strong>.</li>
+</ul>
+
+<form id="rsvpForm" action="" method="POST" target="no-target">
+  <h3>Répondez s'il vous plaît</h3>
+  <p id="input-feedback"></p>
+  <div class="row">
+    <label for="guestName">What is your name?</label>
+    <input type="text" name="guest-name" placeholder="Bill Murray" id="guestName" class="full-width-input" />
+  </div>
+  <div class="row">
+    <h5>Will you attend?</h5>
+    <div class="twelve columns radio-side">
+      <input class="" type="radio" id="rsvpAttend" name="rsvp" value="Will attend" />
+      <label for="rsvpAttend">Will attend</label>
+    </div>
+    <div class="twelve columns radio-side">
+      <input class="" type="radio" id="rsvpNotAttend" name="rsvp" value="Will not attend" />
+      <label for="rsvpNotAttend">Will not attend</label>
+    </div>
+  </div>
+  <div class="row">
+    <label for="numberAttending">Please let us know how many guests will be attending from your party. Don't forget to include yourself!</label>
+    <input type="text" name="number-attending" placeholder="Number attending" id="numberAttending" class="full-width-input" />
+  </div>
+  <div class="row">
+    <label for="anythingElse">Anything else you would like to let us know?</label>
+    <input type="text" name="anything-else" id="anythingElse" placeholder="Anything else?" class="full-width-input" />
+  </div>
+  <input type="submit" value="Submit" />
+</form>
+
+<iframe src="#" id="no-target" name="no-target" style="visibility:hidden; height: 0; width: 0;"></iframe>
+
+			</div>
+			</div>
+		</div>
+	</div>
+
+    </div>
+      
+      <div class="row beach-image">
+  	<!-- <img class="u-max-full-width" src="/img/beach.jpg"> -->
+</div>	
+      
+    <script src="/js/site.js"></script>
+  </body>
+
 </html>
