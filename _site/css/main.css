@@ -30,7 +30,7 @@ body {
 	font-size: 1.4rem;
 }
 
-ul, li {
+.navbar-container ul, .navbar-container li {
 	margin: 0;
 }
 
@@ -250,6 +250,7 @@ table .cta-button {
  .icon-amusement {background-image: url("/img/svg/attraction-15.svg");}
  .icon-clothing { background-image: url("/img/svg/clothing-store-15.svg"); }
  .icon-lodging { background-image: url("/img/svg/lodging-15.svg"); }
+ .icon-rsvp { background-image: url("/img/svg/post-15.svg"); }
 
  .section-title {
  	display: inline-block;
@@ -292,6 +293,33 @@ div.beach-image {
  .section-wrapper {
  	margin-top: 4em;
  }
+
+/* 
+ *  FORM ELEMENTS 
+ */
+
+form {
+	margin-top: 2em;
+	padding: 1.5em;
+	border: 1px dashed #ccc;
+}
+
+.radio-side input, .radio-side label {
+	display: inline-block;
+}
+
+form * {
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-weight: 400;
+}
+
+.full-width-input { 
+	width: 100%;
+}
+
+form .row {
+	margin-top: 1.5em;
+}
 
  /* Larger than mobile */
 @media (min-width: 320px) {

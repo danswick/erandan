@@ -10,7 +10,7 @@ categories:
 
 We're pumped to spend an evening with all of our favorite people. We'll have food to eat, drinks to drinks, great company, and good music to dance to. There may even be a speech or two. 
 
-Join us at **6 pm** for dinner, drinks, and plenty of dancing. 
+Join us for dinner, drinks, and plenty of dancing. 
 
 #### Getting there
 
@@ -20,16 +20,7 @@ Join us at **6 pm** for dinner, drinks, and plenty of dancing.
 </figure> -->
 <div id="receptionMap" class="section-map"></div>
 
-- <span class="small-icon icon-transit"></span> **Public transportation**
-  * Take the whatevs bus
-  * Or the other bus
-- <span class="small-icon icon-parking"></span> **Driving**
-  * Parking is somewhat limited nearby, but you can try parking on California. Please don't park next door! 
-- <span class="small-icon icon-car"></span> **Rideshare**
-  * Uber or Lyft
-  * Cabs exist too
-- <span class="small-icon icon-bike"></span> **Bike**
-  * Take Divvy! 
+We're busy finding you the best transportation details, but rest assured that you'll be able to take <span class="small-icon icon-transit"></span>, <span class="small-icon icon-car"></span>, or <span class="small-icon icon-bike"></span>!
 
 #### Attire 
 
@@ -37,9 +28,9 @@ Dress your best, but make sure your shoes are compfortable enough to hit the dan
 
 #### Food and drink
 
-We'll be serving a full meal of delicious walnut loaf and pea soup. We ask that you supply your own croutons. 
+We're doing tastings and picking out the most delicious entrees, appetizers, and desserts for you. Check back here for more details!
 
-Come thirsty, becaue we'll have lots to drink, including a bourbon cocktail, selection of beer, and the finest wines. 
+Come thirsty, becaue we'll have lots to drink, including a bourbon cocktail and selection of beers and wines. 
 
 <script type="text/javascript">
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
