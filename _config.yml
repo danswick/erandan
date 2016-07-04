@@ -6,6 +6,7 @@ baseurl: ""
 url: "http://erandan.com" # the base hostname & protocol for your site
 twitter_username: 
 github_username:  
+future: true
 
 # Build settings
 markdown: kramdown
