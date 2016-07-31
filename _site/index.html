@@ -278,14 +278,23 @@ We're pulling together a fun list of places to see while you're in town, includi
 <!-- <span class="small-icon icon-amusement"></span><span class="small-icon icon-restaurant"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt optio ipsum necessitatibus fuga deleniti non porro, recusandae enim, facilis, voluptates rerum quae consequuntur cum adipisci libero ad velit hic sapiente. -->
 </div>
 <script type="text/javascript">
-var $nav = $('.navbar-container nav'),
+/*var $nav = $('.navbar-container nav'),
     $mapReception = $('#receptionMap'),
     $receptionMapSection = $('.travel-map-container'),
     $navHeight = $nav.outerHeight() + 1;
 
-$mapReception.height($(window).height() - $navHeight);
-$('.map-container').height($receptionMapSection.height());
+if ($(window).outerWidth() < 321) {
+    $mapReception.height($(window).height() * 0.8);
+    $('.map-container').height($(window).height() * 0.8);
+    $($('.map-details')[0]).addClass('extra-top-margin');
+    makeMap();
+} else {
+    $mapReception.height($(window).height() - $navHeight);
+    $('.map-container').height($receptionMapSection.height());    
+    makeMap();
+}
 
+function makeMap() {
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
 var map = new mapboxgl.Map({
     container: 'receptionMap', // container id
@@ -321,6 +330,7 @@ var destinations = {
 
 }
 
+
     // On every scroll event, check which element is on screen
     window.onscroll = function() {
         var desintaionNames = Object.keys(destinations);
@@ -348,6 +358,8 @@ var destinations = {
         var bounds = element.getBoundingClientRect();
         return bounds.top < window.innerHeight && bounds.bottom > 0;
     }
+}*/
+// end makeMap
 </script>
 
 

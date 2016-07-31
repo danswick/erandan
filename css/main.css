@@ -512,9 +512,11 @@ form .row {
 		position: absolute;
 	    background-color: #fff;
 	    z-index: 80;
+	    width: 100%;
 	}
 	.map-container {
-		width: 85%;
+		width: inherit;
+		margin: 0 auto;
 	}
 	.map-details {
 		
@@ -562,6 +564,7 @@ form .row {
 		width: auto;
 	}
 	.map-container {
+		height: auto;
 		width: 50%;
 		float: left;
 	}

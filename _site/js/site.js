@@ -27,6 +27,17 @@ $( function() {
 
   });
 
+  if ($(window).outerWidth() < 321) {
+    $mapReception.height($(window).height() * 0.8);
+    $('.map-container').height($(window).height() * 0.8);
+    $($('.map-details')[0]).addClass('extra-top-margin');
+    makeMap();
+  } else {
+    $mapReception.height($(window).height() - $navHeight);
+    $('.map-container').height($receptionMapSection.height());    
+    makeMap();
+  }
+
   function sticky (scrollPos) {
     if (scrollPos >= (firstSectionOffset - ($navHeight + 50))) {
       $nav.attr('class', 'nav-docked');
@@ -40,7 +51,7 @@ $( function() {
   // Sticky reception map
   function stickyMap (scrollPos) {
     // if scrollpos is within .travel-map-container, add .map-docked to map
-    if (scrollPos >= (receptionMapOffsetTop + 50) && scrollPos <= (receptionMapOffsetBottom - $navHeight)) { 
+    if (scrollPos >= (receptionMapOffsetTop/* + 50*/) && scrollPos <= (receptionMapOffsetBottom - $navHeight)) { 
       $mapReception.attr('class', 'map-docked');
       /*$mapReception.css('left', receptionMapOffsetLeft);*/
     } else if (scrollPos > (receptionMapOffsetBottom - $navHeight)) {
@@ -116,5 +127,72 @@ $( function() {
 
     formSubmit();
   });
+
+
+function makeMap() {
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
+var map = new mapboxgl.Map({
+    container: 'receptionMap', // container id
+    style: 'mapbox://styles/danswick/cio85vga7001jakm9onnuqk7e', //stylesheet location
+    center: [-87.69961783,41.935228526], // starting position
+    zoom: 13 // starting zoom
+});
+map.addControl(new mapboxgl.Navigation({position: 'bottom-left'}));
+map.scrollZoom.disable();
+
+var destinations = {
+    mapCeremony: {
+        bearing: 90,
+        center: [-87.703176,41.921123],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 25
+    },
+    mapReception: {
+        bearing: 0,
+        center: [-87.698485,41.946875],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 25
+    },
+    mapOverview: {
+        bearing: 0,
+        center: [-87.69788068507054,41.930317424097495],
+        zoom: 13,
+        speed: 0.5,
+        pitch: 35
+    }
+
+}
+
+
+    // On every scroll event, check which element is on screen
+    window.onscroll = function() {
+        var desintaionNames = Object.keys(destinations);
+        for (var i = 0; i < desintaionNames.length; i++) {
+            var destinationName = desintaionNames[i];
+            if (isElementOnScreen(destinationName)) {
+                setActiveDestination(destinationName);
+                break;
+            }
+        }
+    };
+
+    // set initial view
+    var activeDestinationName = "overview";
+    function setActiveDestination(destinationName) {
+        if (destinationName === activeDestinationName) return;
+
+        map.flyTo(destinations[destinationName]);
+
+        activeDestinationName = destinationName;
+    }
+
+    function isElementOnScreen(id) {
+        var element = document.getElementById(id);
+        var bounds = element.getBoundingClientRect();
+        return bounds.top < window.innerHeight && bounds.bottom > 0;
+    }
+}
 
 });
