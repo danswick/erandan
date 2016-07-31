@@ -11,22 +11,22 @@ categories:
 <div class="row">
     <div class="six columns squares left">
         <h4>Ceremony </h4>
-        <p><strong>Saturday, September 17th</strong></p>
+        <p><strong>{{site.ceremony_date}}</strong></p>
         
-        <p>4:00pm <br>
+        <p>{{site.ceremony_time}}<br>
         Palmer Square Park <br>
-        Palmer Street &amp; Humboldt Boulevard</p>
+        {{site.ceremony_address}}</p>
 
         <p>Our ceremony will be held outdoors at Palmer Square, our favorite park in Chicago.</p>
     </div>
     <div class="six columns squares right">
         <h4>Reception</h4>
         
-        <p><strong>Saturday, September 17th</strong></p>
+        <p><strong>{{site.reception_date}}</strong></p>
         
-        <p>6:30pm <br>
+        <p>{{site.reception_time}}<br>
         Trigger Chicago <br>
-        2810 W Addison St</p>
+        {{site.reception_address}}</p>
 
         <p>We're pumped to spend an evening with all of our favorite people eating, dancing, and sharing a few drinks. There may even be a speech or two.</p>
 </div>

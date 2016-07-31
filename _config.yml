@@ -8,4 +8,14 @@ twitter_username:
 github_username:  
 future: true
 
+# Custom variables
+ceremony_time: "4:30pm"
+ceremony_date: "Saturday, September 17th"
+ceremony_address: "Palmer Street &amp; Humboldt Boulevard"
+
+reception_time: "6:30pm"
+reception_date: "Saturday, September 17th"
+reception_address: "2810 W Addison Street"
+
+
 # Build settings
