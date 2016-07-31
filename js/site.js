@@ -2,11 +2,18 @@ $( function() {
 
   // Sticky nav
   var $nav = $('.navbar-container nav'),
+      $mapReception = $('#receptionMap'),
   		$firstSection = $($('.section-wrapper')[0]),
+      $receptionMapSection = $('.travel-map-container'),
+      $topContainer = $($('.container')[0]),
   		$navItems = $nav.find('a'),
   		$navHeight = $nav.outerHeight() + 1,
-  		firstSectionOffset = $firstSection.offset().top;
+  		firstSectionOffset = $firstSection.offset().top,
+      receptionMapOffsetTop = $receptionMapSection.offset().top - $navHeight,
+      receptionMapOffsetBottom = receptionMapOffsetTop + $receptionMapSection.height() - ($(window).height() - $navHeight - 50),
+      receptionMapOffsetLeft = ($('.travel-map-container .squares').outerWidth() + (parseFloat($('.travel-map-container .squares').css('padding-left').replace('px','')) * 2) + parseFloat($('.travel-map-container .map-container').css('margin-left').replace('px','')));
     	
+
   var scrollPos = $(window).scrollTop();
 
   sticky(scrollPos);
@@ -16,6 +23,7 @@ $( function() {
   	scrollPos = $(this).scrollTop();
 
   	sticky(scrollPos);
+    stickyMap(scrollPos);
 
   });
 
@@ -26,6 +34,20 @@ $( function() {
       $nav.attr('class', 'nav-almost-docked');
     } else {
       $nav.attr('class', '');
+    }
+  }
+
+  // Sticky reception map
+  function stickyMap (scrollPos) {
+    // if scrollpos is within .travel-map-container, add .map-docked to map
+    if (scrollPos >= (receptionMapOffsetTop + 50) && scrollPos <= (receptionMapOffsetBottom - $navHeight)) { 
+      $mapReception.attr('class', 'map-docked');
+      /*$mapReception.css('left', receptionMapOffsetLeft);*/
+    } else if (scrollPos > (receptionMapOffsetBottom - $navHeight)) {
+      $mapReception.attr('class', 'pin-bottom');
+    } else {
+      $mapReception.attr('class', '');
+      $mapReception.css('left', 0);
     }
   }
 
@@ -41,7 +63,7 @@ $( function() {
   });
 
   // Smooth scroll
-	$('nav li a, .cta-button .rsvp-button').on('click', function(e) {
+	$('nav li a, .cta-button, .rsvp-button').on('click', function(e) {
     // Don't smooth scroll if resume link was clicked
     /*if ($(e.target).hasClass('resume-link')) return;*/
 

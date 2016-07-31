@@ -1,45 +1,46 @@
 ---
 layout: post
-title: Reception
-description: The first of the projects
-section-id: reception
+title: Our wedding
+description: itinerary for the day
+section-id: wedding
 tags:
 categories:
   - sections
 ---
 
-We're pumped to spend an evening with all of our favorite people. We'll have food to eat, drinks to drinks, great company, and good music to dance to. There may even be a speech or two. 
+<div class="row">
+    <div class="six columns squares left">
+        <h4>Ceremony </h4>
+        <p><strong>Saturday, September 17th</strong></p>
+        
+        <p>4:00pm <br>
+        Palmer Square Park <br>
+        Palmer Street &amp; Humboldt Boulevard</p>
 
-Join us for dinner, drinks, and plenty of dancing. 
+        <p>Our ceremony will be held outdoors at Palmer Square, our favorite park in Chicago.</p>
+    </div>
+    <div class="six columns squares right">
+        <h4>Reception</h4>
+        
+        <p><strong>Saturday, September 17th</strong></p>
+        
+        <p>6:30pm <br>
+        Trigger Chicago <br>
+        2810 W Addison St</p>
 
-#### Getting there
+        <p>We're pumped to spend an evening with all of our favorite people eating, dancing, and sharing a few drinks. There may even be a speech or two.</p>
+</div>
+<div class="row">
+    <div class="twelve columns">
+        <a class="rsvp-button cta-button" href="#rsvp">RSVP</a>
+    </div>
+</div>
 
-<!-- <figure class="section-image">
-    <img class="u-max-full-width" src="https://api.mapbox.com/styles/v1/danswick/cio0yit1t003dagkljbja0jsc/static/-87.697947,41.946739,15.15,0.00,45.00/800x250@2x?access_token=pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA">
-    <figcaption>Trigger Chicago. 2810 W Addison St.</figcaption>
-</figure> -->
-<div id="receptionMap" class="section-map"></div>
-
-We're busy finding you the best transportation details, but rest assured that you'll be able to take <span class="small-icon icon-transit"></span>, <span class="small-icon icon-car"></span>, or <span class="small-icon icon-bike"></span>!
-
-#### Attire 
-
-Dress your best, but make sure your shoes are compfortable enough to hit the dance floor.
-
-#### Food and drink
-
-We're doing tastings and picking out the most delicious entrees, appetizers, and desserts for you. Check back here for more details!
-
-Come thirsty, becaue we'll have lots to drink, including a bourbon cocktail and selection of beers and wines. 
-
-<script type="text/javascript">
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
-var map = new mapboxgl.Map({
-    container: 'receptionMap', // container id
-    style: 'mapbox://styles/danswick/cio85vga7001jakm9onnuqk7e', //stylesheet location
-    center: [-87.698467, 41.946832], // starting position
-    zoom: 16 // starting zoom
-});
-map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
-map.scrollZoom.disable();
-</script>
+<div class="row">
+    <div class="twelve columns squares square-center">
+        <h4>Open house</h4>
+        <p><strong>Friday, September 16th</strong></p>
+        <p>Time &amp; date TBD!</p>
+        <p>We'll be hanging out on Friday night before the wedding to spend some time with friends and family before the wedding. We aren't having a traditional rehearsal dinner, but still wanted to see everyone before the big day. Stop by and join us for casual drinks. </p>
+    </div>
+</div>

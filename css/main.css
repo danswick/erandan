@@ -1,6 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 
 /*
  *  PAGE LAYOUT SYTLES
@@ -171,7 +170,7 @@ img.headshot {
  }
 
  .centerline-title.left {
-	font-family: "Libre Baskerville";
+	font-family: "Libre Baskerville", serif;
 	text-align: right;
  }
 
@@ -204,6 +203,11 @@ img.headshot {
  	width: 6em;
  	clear: both;
  	text-align: center;
+ 	display: block;
+ 	text-decoration: none;
+ }
+ .cta-button:visited {
+ 	color: #fff;
  }
  .cta-button:hover {
 	background-color: #829961;
@@ -237,8 +241,8 @@ table .cta-button {
  	margin-bottom: -2px;
  }
 
- .icon-travel { background-image: url("/img/svg/airport-15.svg"); }
- .icon-reception { background-image: url("/img/svg/beer-15.svg"); }
+ .icon-info { background-image: url("/img/svg/airport-15.svg"); }
+ .icon-wedding { background-image: url("/img/svg/beer-15.svg"); }
  .icon-registry { background-image: url("/img/svg/gift-15.svg"); }
  .icon-story { background-image: url("/img/svg/heart-15.svg"); }
  .icon-transit { background-image: url("/img/svg/rail-15.svg"); }
@@ -252,11 +256,18 @@ table .cta-button {
  .icon-lodging { background-image: url("/img/svg/lodging-15.svg"); }
  .icon-rsvp { background-image: url("/img/svg/post-15.svg"); }
 
+ 
+ .section-title, .icon {
+ 	width: 100%;
+ 	text-align: center;
+ 	margin: 0 auto;
+ }
  .section-title {
  	display: inline-block;
+ 	margin-bottom: 1.5em;
  }
 
- #reception li {
+ #wedding li {
  	list-style: none;
  }
 
@@ -290,9 +301,74 @@ div.beach-image {
  	margin-top: 2em;
  }
 
+
  .section-wrapper {
- 	margin-top: 4em;
+ 	margin-top: 10em;
  }
+
+
+/* 
+ *  DESIGN ELEMENTS
+ */
+
+.squares {
+	padding: 1em;
+	margin-bottom: 2em;
+}
+.squares p {
+	font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+.squares h4 {
+	font-family: "Libre Baskerville", serif;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+h5 {
+	font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 1.6em;
+	margin-top: 2em;
+	margin-bottom: 0.2em;
+}
+
+.square-center {
+	text-align: center;
+}
+#wedding .cta-button {
+	margin: -1em auto 8em auto;
+}
+
+/*reset info container to be full width*/
+#info .container {
+	margin: 0;
+	width: 100%;
+}
+
+#info .inner-container {
+	margin: 0 auto;
+	width: 85%;
+}
+
+.travel-map-container .squares {
+	padding-left: 1.5em;
+}
+
+#rsvp, #registry {
+	background-color: #dde6d0;
+	padding: 4em 0;
+}
+.container .extra-top-margin {
+	margin-top: 4em;
+}
+
+/* - - - reception map - - - */
+.map-container {
+	position: relative;
+	height: 200px;
+}
+
 
 /* 
  *  FORM ELEMENTS 
@@ -301,7 +377,7 @@ div.beach-image {
 form {
 	margin-top: 2em;
 	padding: 1.5em;
-	border: 1px dashed #ccc;
+	border: 1px dashed #777;
 }
 
 .radio-side input, .radio-side label {
@@ -414,7 +490,7 @@ form .row {
 	}
 
 	.centerline-title.left {
-		font-family: "Libre Baskerville";
+		font-family: "Libre Baskerville", serif;
 		text-align: center;
 		font-size: 2em;
 		margin-bottom: 1rem;
@@ -424,6 +500,22 @@ form .row {
 	}
 	.header-rings img {
 		display: none;
+	}
+	.left, .right {
+		text-align: center;
+		border: none;
+	}
+
+	.section-wrapper #receptionMap {
+		position: absolute;
+	    background-color: #fff;
+	    z-index: 80;
+	}
+	.map-container {
+		width: 85%;
+	}
+	.map-details {
+		
 	}
 }
 
@@ -442,6 +534,43 @@ form .row {
 		text-align: right;
 		font-size: 2.5em;
 		margin-bottom: 2rem;
+	}
+	.left { text-align: right; }
+	.right { text-align: left; }
+
+	.section-wrapper #receptionMap {
+		position: absolute;
+	    background-color: #fff;
+	    z-index: 80;
+	}
+	#receptionMap.map-docked {
+		position: fixed;
+		top: 5em;
+	    left: 0;
+	}
+	.pin-bottom {
+		right: 0;
+		left: 0;
+		bottom: 5em;
+	}
+	#receptionMap {
+		width: 100%;
+	}
+	#receptionMap.map-docked {
+		width: auto;
+	}
+	.map-container {
+		width: 50%;
+		float: left;
+	}
+	.map-details {
+		width: 45%;
+		float: right;
+	}
+	.details-docked {
+		position: absolute;
+		right: 0;
+		z-index: 99;
 	}
 }
 
