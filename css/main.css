@@ -344,6 +344,7 @@ h5 {
 #info .container {
 	margin: 0;
 	width: 100%;
+	max-width: none;
 }
 
 #info .inner-container {
@@ -624,7 +625,15 @@ form .row {
 }
 
 /* Larger than desktop */
-@media (min-width: 1000px) {}
+@media (min-width: 1000px) {
+		.map-details {
+			max-width: 400px;
+			float: left;
+		}
+		#info .map-details {
+			padding-left: 5em;
+		}
+}
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
