@@ -369,8 +369,9 @@ h5 {
 	position: relative;
 	height: 200px;
 }
-
-
+.map-details .extra-top-margin {
+	padding-top: 4em;
+}
 /* 
  *  FORM ELEMENTS 
  */
