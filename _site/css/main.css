@@ -328,7 +328,7 @@ div.beach-image {
 h5 {
 	font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
-	font-size: 1.6em;
+	font-size: 1.4em;
 	margin-top: 2em;
 	margin-bottom: 0.2em;
 }
@@ -568,6 +568,9 @@ form .row {
 	.map-details {
 		width: 45%;
 		float: right;
+	}
+	.travel-map-container .squares.map-details {
+		padding-left: 1em;
 	}
 	.details-docked {
 		position: absolute;
