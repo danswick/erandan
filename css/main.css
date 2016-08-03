@@ -216,6 +216,9 @@ img.headshot {
 	text-decoration: none;
 	color: #fff;
 }
+a.cta-button:hover {
+	color: #fff;
+}
 table .cta-button {
 	padding: 0.5em 0.5em;
 	margin: 0;
