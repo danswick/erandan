@@ -23,13 +23,15 @@ $( function() {
   	scrollPos = $(this).scrollTop();
 
   	sticky(scrollPos);
-    stickyMap(scrollPos);
+    if ($(window).outerWidth() > 550) {
+      stickyMap(scrollPos);
+    }
 
   });
 
-  if ($(window).outerWidth() < 321) {
-    $mapReception.height($(window).height() * 0.8);
-    $('.map-container').height($(window).height() * 0.8);
+  if ($(window).outerWidth() <= 550) {
+    $mapReception.height('400px');
+    $('.map-container').height('400px');
     $($('.map-details')[0]).addClass('extra-top-margin');
     makeMap();
   } else {
@@ -51,7 +53,7 @@ $( function() {
   // Sticky reception map
   function stickyMap (scrollPos) {
     // if scrollpos is within .travel-map-container, add .map-docked to map
-    if (scrollPos >= (receptionMapOffsetTop/* + 50*/) && scrollPos <= (receptionMapOffsetBottom - $navHeight)) { 
+    if (scrollPos >= (receptionMapOffsetTop + 50) && scrollPos <= (receptionMapOffsetBottom - $navHeight)) { 
       $mapReception.attr('class', 'map-docked');
       /*$mapReception.css('left', receptionMapOffsetLeft);*/
     } else if (scrollPos > (receptionMapOffsetBottom - $navHeight)) {
