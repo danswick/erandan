@@ -76,7 +76,7 @@ $( function() {
   });
 
   // Smooth scroll
-	$('nav li a, .cta-button, .rsvp-button').on('click', function(e) {
+	$('nav li a, .rsvp-button').on('click', function(e) {
     // Don't smooth scroll if resume link was clicked
     /*if ($(e.target).hasClass('resume-link')) return;*/
 
