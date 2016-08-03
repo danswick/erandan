@@ -340,6 +340,20 @@ h5 {
 	margin: -1em auto 8em auto;
 }
 
+.section-wrapper table {
+	margin: 0 auto;
+	margin-bottom: 3em;
+}
+.lodging-table .lodging-table-cta-button {
+	width: 40%;
+}
+.lodging-table .lodging-table-description {
+	width: 70%;
+}
+.lodging-table .cta-button {
+	margin: 0 auto;
+}
+
 /*reset info container to be full width*/
 #info .container {
 	margin: 0;
@@ -350,6 +364,7 @@ h5 {
 #info .inner-container {
 	margin: 0 auto;
 	width: 85%;
+	max-width: 960px;
 }
 
 .travel-map-container .squares {
@@ -364,6 +379,23 @@ h5 {
 	margin-top: 4em;
 }
 
+/* - - - button containers - - - */
+.double-button-container {
+	position: relative;
+	width: 100%;
+}
+.double-button-desc {
+	float: left;
+	width: 50%;
+	padding: 1em;
+}
+.double-button {
+	float: right;
+	width: 50%;
+	margin: 0 auto;
+}
+
+
 /* - - - reception map - - - */
 .map-container {
 	position: relative;
@@ -372,8 +404,11 @@ h5 {
 .map-details .extra-top-margin {
 	padding-top: 4em;
 }
+
+
 /* 
  *  FORM ELEMENTS 
+ *  - - - - - - - -
  */
 
 form {

@@ -53,7 +53,7 @@ $( function() {
   // Sticky reception map
   function stickyMap (scrollPos) {
     // if scrollpos is within .travel-map-container, add .map-docked to map
-    if (scrollPos >= (receptionMapOffsetTop + 50) && scrollPos <= (receptionMapOffsetBottom - $navHeight)) { 
+    if (scrollPos >= (receptionMapOffsetTop + 25) && scrollPos <= (receptionMapOffsetBottom - $navHeight)) { 
       $mapReception.attr('class', 'map-docked');
       /*$mapReception.css('left', receptionMapOffsetLeft);*/
     } else if (scrollPos > (receptionMapOffsetBottom - $navHeight)) {
