@@ -38,9 +38,12 @@ categories:
 
 <div class="row">
     <div class="twelve columns squares square-center">
-        <h4>Open house</h4>
-        <p><strong>Friday, September 16th</strong></p>
-        <p>Time &amp; date TBD!</p>
-        <p>We'll be hanging out on Friday night before the wedding to spend some time with friends and family before the wedding. We aren't having a traditional rehearsal dinner, but still wanted to see everyone before the big day. Stop by and join us for casual drinks. </p>
+        <h4>Welcome cocktail hour</h4>
+        <p><strong>Friday, September 16th</strong><br></p>
+        <p>7:00pm<br>
+        <a href="http://www.dasradler.com/">The Radler</a><br>
+        2375 N. Milwaukee Avenue</p>
+
+        <p>We'll be hanging out on Friday night before the wedding to spend some time with friends and family before the big day. We aren't having a traditional rehearsal dinner, but still wanted to see friends and family, especially those visiting us from out of town, before the big day. If you are able, stop by and join us for drinks and appetizers. If you can't make it two days in a row, that's okay! We'll be sure to give you a hug on Saturday.</p>
     </div>
 </div>
