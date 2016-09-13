@@ -69,7 +69,8 @@ var agenda = {
         "April": "Arrive at Trigger to start setting up decorations", 
         "Nikki & Rob": "Arrive at Trigger to start setting up decorations", 
         "Peggy": "Arrive at Trigger to start setting up decorations", 
-        "Aubrie & Caryn": "Arrive at Trigger to start setting up decorations"
+        "Aubrie & Caryn": "Arrive at Trigger to start setting up decorations",
+        "Louise": "Arrive at trigger and start on sign lettering"
       }
     },
     {
@@ -258,24 +259,20 @@ var agenda = {
     {
     	"time": "11:00 pm",
     	"roles": {
-    		"Guests": "One last call for alcohol so finish your whiskey or beer.",
+    		"Guests": "One last call for alcohol so finish your whiskey or beer",
     		"Event staff": "Last call!"
     	}
     },
     {
       "time": "11:30 pm",
       "roles": {
-      	"Lorenzo": "Dancing ends and we say goodnight."
+      	"Lorenzo": "Dancing ends and we say goodnight",
+        "Everyone": "Help pack up decorations and servingware if so inclined"
       }
     },
     {
       "time": "12:00 am",
       "roles": {
-      	"Brittany": "Take pie pans home",
-      	"Anna": "Take decorations home",
-      	"Jay & Nicole": "Take beverage servers home",
-      	"Katelyn & Sarah": "Take service stuff home",
-      	"Bill": "Take any physical gifts home",
         "Everyone": "Feel the love"
       }
     }
