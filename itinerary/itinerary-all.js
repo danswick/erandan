@@ -42,7 +42,7 @@ var agenda = {
     {
       "time": "10:30 am",
       "roles": {
-
+        "Melissa": "Begin taking photos of wedding party getting ready"
       }
     },
     {
