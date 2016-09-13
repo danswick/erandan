@@ -130,15 +130,14 @@ title: itinerary
 				$currentRoleEl.removeClass('inactiveRole');
 				$currentRoleEl.addClass('activeRole');
 			}
-			else if (!(currentRole == role)) {
+			else if (!(currentRole == role || currentRole == 'Guests' || currentRole == 'Everyone')) {
 				$currentRoleEl.css('display', 'none');
 				$currentRoleEl.addClass('inactiveRole');
 				$currentRoleEl.removeClass('activeRole');
-			} else {
+			} else if (currentRole == role || currentRole == 'Guests' || currentRole == 'Everyone') {
 				$currentRoleEl.css('display', 'block');
 				$currentRoleEl.removeClass('inactiveRole');
 				$currentRoleEl.addClass('activeRole');
-				/*$($currentRoleEl.siblings()[0]).css('color', '#222');*/
 			}
 		}
 
