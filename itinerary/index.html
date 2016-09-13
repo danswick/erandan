@@ -1,0 +1,169 @@
+---
+layout: default
+title: itinerary
+---
+
+<div class="container">
+	<style type="text/css">
+		.container {
+			margin-top: 4em;
+		}
+		.timeslot {
+			margin-top: 3em;
+			padding-top: 1em;
+			/*border-top: 1px dashed #999;*/
+		}
+		.inactiveRole {
+			display: 'none';
+		}
+		.inactiveTime h3 {
+			color: #ccc;
+		}
+		#itineraryContainer h3 {
+			font-size: 1.5em;
+		    padding-bottom: 0.5em;
+		    margin-bottom: 0.5em;
+		    text-align: right;
+		}
+		.role-name, .role-description {
+			display: inline-block;
+		}
+		.role-name {
+			font-weight: 600;
+			min-width: 5em;
+			text-align: right;
+		}
+		.role-description {
+			margin-bottom: 0.5em;
+		}
+		.role-container, .timeslot {
+			clear: both;
+			content: "";
+			overflow: auto;
+		}
+	</style>
+	
+	<div class="row">
+		<div id="roleButtons">
+		
+		</div>
+	</div>
+
+	<div class="row">
+		<div id="itineraryContainer" class="twelve columns"></div>
+	</div>
+</div>
+<!-- <div class="timeslot">
+	<h3 class="time-text"></h3>
+	<span class="role-name"></span><span class="role-description"></span>
+</div> -->
+
+<script type="text/javascript" src="itinerary-all.js"></script>
+<script type="text/javascript">
+	// parse query string
+	var qs = (function(a) {
+    	if (a == "") return {};
+    	var b = {};
+    	for (var i = 0; i < a.length; ++i)
+	    {
+	        var p=a[i].split('=', 2);
+	        if (p.length == 1)
+	            b[p[0]] = "";
+	        else
+	            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+	    }
+	    	return b;
+	})(window.location.search.substr(1).split('&'));
+
+	var uniq = {}; // contains all the unique names
+
+	for (var i=0; i < agenda.agenda.length; i++) {
+		var slot = agenda.agenda[i];
+		var time = slot.time;
+		var rolesObj = slot.roles;
+		var rolesEls = '';
+
+		for (var role in rolesObj) {
+			var currentRole = '<div class="role-container" data-role="' + role + '"><div class="role-name two columns">' + role + ' </div><div class="role-description ten columns">' + rolesObj[role] + '</div></div>';
+			rolesEls += currentRole;
+
+			if(!uniq[role]) uniq[role] = 1;
+		}
+
+		var slotEl = '<div class="timeslot"><h3 class="time-text two columns">' + time + '</h3>' + rolesEls + '</div>';
+		$('#itineraryContainer').append(slotEl);
+		
+	}
+
+	// make buttons from unique roles 
+	for (person in uniq) {
+		var personButton = '<a class="button role-button" href="#" data-role="' + person + '">' + person + '</a>';
+		$('#roleButtons').append(personButton);
+	}
+
+	$('.role-button').on('click', function(e) {
+		e.preventDefault();
+		var role = $(this).data('role');
+		filterRoles(role);
+		grayTitles();
+	});
+
+	// filter by query string entry 
+	if (qs.name) {
+		filterRoles(qs.name);
+		grayTitles();
+	} else {
+		filterRoles('Everyone');
+		grayTitles();
+	}
+
+	function filterRoles(role) {
+		var allRoleEls = $('.role-container');
+		var allSlots = $('.timeslot');
+
+		// filter roles
+		for (var i = 0; i < allRoleEls.length; i++) {
+			var $currentRoleEl = $(allRoleEls[i]);
+			var currentRole = $currentRoleEl.data('role');
+			if (role == 'Everyone') {
+				$currentRoleEl.css('display', 'block');
+				$currentRoleEl.removeClass('inactiveRole');
+				$currentRoleEl.addClass('activeRole');
+			}
+			else if (!(currentRole == role)) {
+				$currentRoleEl.css('display', 'none');
+				$currentRoleEl.addClass('inactiveRole');
+				$currentRoleEl.removeClass('activeRole');
+			} else {
+				$currentRoleEl.css('display', 'block');
+				$currentRoleEl.removeClass('inactiveRole');
+				$currentRoleEl.addClass('activeRole');
+				/*$($currentRoleEl.siblings()[0]).css('color', '#222');*/
+			}
+		}
+
+		updateUrl(role);
+		
+	}
+
+	function grayTitles() {
+		$('.timeslot').each(function(e){
+			if($(this).find('.activeRole').length < 1) {
+				$(this).addClass('inactiveTime');
+			} else {
+				$(this).removeClass('inactiveTime');
+			}
+		});
+	}
+
+	function updateUrl(name) {
+		if (name) {
+			var currentUrl = window.location.origin + window.location.pathname;
+		
+			if (history.pushState) {
+			    var newurl = window.location.origin + window.location.pathname + '?name=' + name;
+			    window.history.pushState({path:newurl},'',newurl);
+			}
+		}
+	}
+</script>
