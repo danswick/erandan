@@ -33,7 +33,10 @@ var agenda = {
       "time": "10:00 am",
       "roles": {
         "Erin": "Get ready with Mo at AirBnB",
-        "Dan": "Leave AirBnB to get ready with Jason and Cody"
+        "Mo": "Arrive at AirBnB",
+        "Dan": "Leave AirBnB to get ready with Jason and Cody",
+        "Cody": "Leave to get ready with Dan and Jason",
+        "Jason": "Leave to get ready with Dan and Cody"
       }
     },
     {
