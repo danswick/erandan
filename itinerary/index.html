@@ -5,6 +5,7 @@ title: itinerary
 
 <div class="container">
 	<style type="text/css">
+		footer { display: none; }
 		.container {
 			margin-top: 4em;
 		}
@@ -50,8 +51,20 @@ title: itinerary
 		.role-button {
 			margin: 0.3em;
 		}
+		a.button.button-primary {
+			background-color: #A4BC82;
+			border: 1px solid #829961;
+		}
+		a.button.button-primary:hover, a.button.button-primary:visited, a.button.button-primary:focus {
+			background-color: #829961;
+			border: 1px solid #829961;
+		}
 	</style>
-	
+	<div class="row">
+		<div class="twelve columns">
+			<h2 style="color:#A4BC82"><a href="http://erandan.com" style="color:#A4BC82; text-decoration: none;">erandan</a></h2>
+		</div>
+	</div>
 	<div class="row">
 		<div id="roleButtons">
 		
@@ -107,7 +120,13 @@ title: itinerary
 	// make buttons from unique roles 
 	for (person in uniq) {
 		var personButton = '<a class="button role-button" href="#" data-role="' + person + '">' + person + '</a>';
-		$('#roleButtons').append(personButton);
+		var everyoneButton = '<a class="button button-primary role-button" href="#" data-role="' + person + '">' + person + '</a>';
+		
+		if (person == 'Everyone') {
+			$('#roleButtons').append(everyoneButton);
+		} else {
+			$('#roleButtons').append(personButton);
+		}
 	}
 
 	$('.role-button').on('click', function(e) {

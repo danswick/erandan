@@ -2,7 +2,7 @@ var agenda = {
   "name": "",
   "role": "",
   "agenda": [
-    {
+    /*{
       "time": "08:00",
       "roles": {
         "Erin": "Wake up and go for a run",
@@ -28,66 +28,66 @@ var agenda = {
       "roles": {
       	"Erin": "Leave for getting ready party"
       }
+    },*/
+    {
+      "time": "10:00 am",
+      "roles": {
+        "Erin": "Get ready with Mo at AirBnB",
+        "Dan": "Leave AirBnB to get ready with Jason and Cody"
+      }
     },
     {
-      "time": "10:00",
+      "time": "10:30 am",
       "roles": {
 
       }
     },
     {
-      "time": "10:30",
+      "time": "11:00 am",
       "roles": {
 
       }
     },
     {
-      "time": "11:00",
+      "time": "11:30 am",
       "roles": {
 
       }
     },
     {
-      "time": "11:30",
+      "time": "12:00 pm",
       "roles": {
 
       }
     },
     {
-      "time": "12:00",
+      "time": "12:30 pm",
       "roles": {
-
+        "Anna": "Arrive at Trigger to start setting up decorations", 
+        "Brittany": "Arrive at Trigger to start setting up decorations", 
+        "Jenny": "Arrive at Trigger to start setting up decorations", 
+        "April": "Arrive at Trigger to start setting up decorations", 
+        "Nikki & Rob": "Arrive at Trigger to start setting up decorations", 
+        "Peggy": "Arrive at Trigger to start setting up decorations", 
+        "Aubrie & Caryn": "Arrive at Trigger to start setting up decorations"
       }
     },
     {
-      "time": "12:30",
+      "time": "1:00 pm",
       "roles": {
-
+      	
       }
     },
     {
-      "time": "13:00",
-      "roles": {
-      	"Anna": "Arrive at Trigger to start setting up decorations", 
-      	"Brittany": "Arrive at Trigger to start setting up decorations", 
-      	"Jenny": "Arrive at Trigger to start setting up decorations", 
-      	"April": "Arrive at Trigger to start setting up decorations", 
-      	"Nikki": "Arrive at Trigger to start setting up decorations", 
-      	"Rob": "Arrive at Trigger to start setting up decorations", 
-      	"Peggy": "Arrive at Trigger to start setting up decorations", 
-      	"Aubrie": "Arrive at Trigger to start setting up decorations", 
-      	"Caryn": "Arrive at Trigger to start setting up decorations"
-      }
-    },
-    {
-      "time": "13:30",
+      "time": "1:30 pm",
       "roles": {
       	"Paul": "Arrive at Trigger to drop off booze",
-      	"Peggy": "Sign off with Paul on Booze and Mariano's on ice"
+        "Katelyn & Sarah": "Arrive at Trigger with ice (could be later)",
+      	"Peggy": "Receive Paul & Katelyn with booze and ice"
       }
     },
     {
-      "time": "13:45",
+      "time": "1:45 pm",
       "roles": {
       	"Erin": "Arrive at Palmer Square",
       	"Dan": "Arrive at Palmer Square",
@@ -95,7 +95,7 @@ var agenda = {
       }
     },
     {
-      "time": "14:00",
+      "time": "2:00 pm",
       "roles": {
       	"Erin": "D&E photos",
       	"Dan": "D&E photos",
@@ -103,7 +103,7 @@ var agenda = {
       }
     },
     {
-      "time": "14:30",
+      "time": "2:30 pm",
       "roles": {
       	"Cody": "Arrive at Palmer Square, wedding party photos",
       	"Jason": "Arrive at Palmer Square, wedding party photos",
@@ -111,20 +111,19 @@ var agenda = {
       }
     },
     {
-      "time": "15:00",
+      "time": "3:00 pm",
       "roles": {
       	
       }
     },
     {
-      "time": "15:30",
+      "time": "3:30 pm",
       "roles": {
-      	"Nikki": "Leave from Trigger with chairs, metal buckets, and baby's breath",
-      	"Rob": "Leave from Trigger with chairs, metal buckets, and baby's breath"
+      	"Nikki & Rob": "Leave from Trigger with chairs, metal buckets, and baby's breath"
       }
     },
     {
-      "time": "16:00",
+      "time": "4:00 pm",
       "roles": {
       	"Andy": "Arrive at Palmer Square with backdrop",
       	"Brian": "Arrive at Trigger with guitar",
@@ -137,48 +136,50 @@ var agenda = {
       }
     },
     {
-      "time": "16:30",
+      "time": "4:15 pm",
+      "roles": {
+        "Brian": "Begin playing guitar while guests arrive"
+      }
+    },
+    {
+      "time": "4:30 pm",
       "roles": {
       	"Guests": "Ceremony begins"
       }
     },
     {
-      "time": "17:00",
+      "time": "5:00 pm",
       "roles": {
       	"Guests": "Ceremony ends",
       	"Erin": "Family photos",
       	"Dan": "Family photos",
       	"Andy": "Family photos",
       	"Dianne": "Family photos",
-      	"Bill": "Family photos",
-      	"Tracy": "Family photos",
-      	"Nikki": "Family photos",
-      	"Jay": "Family photos",
-      	"Rob": "Family photos",
-      	"Nicole": "Family photos",
+      	"Bill & Tracy": "Family photos",
+      	"Nikki & Rob": "Family photos",
+      	"Jay & Nicole": "Family photos",
       	"Melissa": "Family photos",
       	"Peggy": "Head up to Trigger",
       	"Anna": "Head up to Trigger"
       }
     },
     {
-      "time": "17:30",
+      "time": "5:30 pm",
       "roles": {
       	"Event staff": "Arrive at Trigger",
       	"Lorenzo": "Arrive at Trigger",
-      	"Peggy": "Help event staff and Lorenzo find their set up areas",
-      	"Anna": "Help event staff and Lorenzo find their set up areas"
+      	"Peggy": "Help event staff and Lorenzo find their set up areas"
       }
     },
     {
-      "time": "17:45",
+      "time": "5:45 pm",
       "roles": {
       	"Big star": "Food arrives",
       	"Event staff": "Receive food and begin setting up"
       }
     },
     {
-      "time": "18:00",
+      "time": "6:00 pm",
       "roles": {
       	"Event staff": "Bar set up complete",
       	"Guests": "Guests start arriving (probably)",
@@ -186,14 +187,14 @@ var agenda = {
       }
     },
     {
-      "time": "18:30",
+      "time": "6:30 pm",
       "roles": {
       	"Guests": "Reception officially begins",
       	"Event staff": "Start cocktail service (earlier is ok if people are ready)"
       }
     },
     {
-      "time": "19:00",
+      "time": "7:00 pm",
       "roles": {
       	"Guests": "Dinner starts",
       	"Event staff": "Dinner starts",
@@ -202,31 +203,31 @@ var agenda = {
       }
     },
     {
-      "time": "19:30",
+      "time": "7:30 pm",
       "roles": {
 
       }
     },
     {
-      "time": "20:00",
+      "time": "8:00 pm",
       "roles": {
       	"Guests": "Speeches start",
       	"Lorenzo": "Speeches start. Mic over the main PA system",
-      	"Bill": "Speech!",
-      	"Dianne": "Speech!",
+      	"Bill": "Welcome remarks",
       	"Jason": "Speech!",
-      	"Mo": "Speech!"
+      	"Mo": "Speech!",
+        "Event staff": "Break down dinner & set up pies for dessert"
       }
     },
     {
-      "time": "20:30",
+      "time": "8:30 pm",
       "roles": {
       	"Guests": "Pie! (if speeches are done)",
       	"Event staff": "Pie! (if speeches are done)"
       }
     },
     {
-      "time": "21:00",
+      "time": "9:00 pm",
       "roles": {
       	"Guests": "Dancing starts!",
 		 		"Lorenzo": "Kick off the dance party as soon as people seem done with dessert. Start with Erin & Dan's first dance, then father/daughther & mother/son",
@@ -237,42 +238,42 @@ var agenda = {
       }
     },
     {
-      "time": "21:30",
+      "time": "9:30 pm",
       "roles": {
 
       }
     },
     {
-      "time": "22:00",
+      "time": "10:00 pm",
       "roles": {
 
       }
     },
     {
-    	"time": "22:30",
+    	"time": "10:30 pm",
     	"roles": {
 
     	}
     },
     {
-    	"time": "23:00",
+    	"time": "11:00 pm",
     	"roles": {
     		"Guests": "One last call for alcohol so finish your whiskey or beer.",
     		"Event staff": "Last call!"
     	}
     },
     {
-      "time": "23:30",
+      "time": "11:30 pm",
       "roles": {
       	"Lorenzo": "Dancing ends and we say goodnight."
       }
     },
     {
-      "time": "24:00",
+      "time": "12:00 am",
       "roles": {
       	"Brittany": "Take pie pans home",
       	"Anna": "Take decorations home",
-      	"Jay": "Take beverage servers home",
+      	"Jay & Nicole": "Take beverage servers home",
       	"Katelyn & Sarah": "Take service stuff home",
       	"Bill": "Take any physical gifts home",
         "Everyone": "Feel the love"
