@@ -86,7 +86,7 @@ var agenda = {
       "time": "1:30 pm",
       "roles": {
       	"Paul": "Arrive at Trigger to drop off booze",
-        "Katelyn & Sarah": "Arrive at Trigger with ice (could be later)",
+        "Nikki": "Arrive at Trigger with ice (could be later)",
       	"Peggy": "Receive Paul & Katelyn with booze and ice"
       }
     },
