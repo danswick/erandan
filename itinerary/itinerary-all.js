@@ -70,7 +70,6 @@ var agenda = {
         "Brittany": "Arrive at Trigger to start setting up decorations", 
         "Jenny": "Arrive at Trigger to start setting up decorations", 
         "April": "Arrive at Trigger to start setting up decorations", 
-        "Nikki & Rob": "Arrive at Trigger to start setting up decorations", 
         "Peggy": "Arrive at Trigger to start setting up decorations", 
         "Aubrie & Caryn": "Arrive at Trigger to start setting up decorations",
         "Louise": "Arrive at trigger and start on sign lettering"
@@ -86,8 +85,8 @@ var agenda = {
       "time": "1:30 pm",
       "roles": {
       	"Paul": "Arrive at Trigger to drop off booze",
-        "Nikki": "Arrive at Trigger with ice (could be later)",
-      	"Peggy": "Receive Paul & Katelyn with booze and ice"
+        "Nikki & Rob": "Arrive at Trigger with ice (could be later)",
+      	"Peggy": "Receive Paul & Nikki with booze and ice"
       }
     },
     {
@@ -109,8 +108,8 @@ var agenda = {
     {
       "time": "2:30 pm",
       "roles": {
-      	"Cody": "Arrive at Palmer Square, wedding party photos",
-      	"Jason": "Arrive at Palmer Square, wedding party photos",
+      	"Cody": "Arrive at Palmer Square with Jason flowers, start wedding party photos",
+      	"Jason": "Arrive at Palmer Square with Cody, wedding party photos",
       	"Mo": "Arrive at Palmer Square, wedding party photos"
       }
     },
