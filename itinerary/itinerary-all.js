@@ -108,7 +108,7 @@ var agenda = {
     {
       "time": "2:30 pm",
       "roles": {
-      	"Cody": "Arrive at Palmer Square with Jason flowers, start wedding party photos",
+      	"Cody": "Arrive at Palmer Square with Jason & flowers, start wedding party photos",
       	"Jason": "Arrive at Palmer Square with Cody, wedding party photos",
       	"Mo": "Arrive at Palmer Square, wedding party photos"
       }
