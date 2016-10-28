@@ -132,7 +132,7 @@ $( function() {
 
 
 function makeMap() {
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2l1dTU0amNkMDJlMDJ0cGR1M3NteGlnZyJ9.6DVNjuwjBS784c3mfdRvzg';
 var map = new mapboxgl.Map({
     container: 'receptionMap', // container id
     style: 'mapbox://styles/danswick/cio85vga7001jakm9onnuqk7e', //stylesheet location
