@@ -3,57 +3,17 @@ layout: default
 ---
 
 {{ content }}
+
 <div class="container">
 	<div class="row">
-		<div class="photos-container twelve columns">
-
+		<div class="twelve columns">
+			<div class="photos-container"></div>
 		</div>
 	</div>
 </div>
 
+{% include photo-grid.html %}
 <script type="text/javascript">
-	function buildGalleryFromFlickrAlbum(apiKey, albumID, userId){
-		// Build AJAX request 
-		var requestURL = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + apiKey + "&photoset_id=" + albumID + "&user_id=" + userId + "&format=json&nojsoncallback=1";
-
-		$.ajax({
-			url: requestURL,
-			type: "GET",
-			dataType: "JSON"
-		}).done(function(data){ return buildGallery(data); });
-	    
-	    // On AJAX callback, iterate through images and 
-	    function buildGallery(data) {
-	      var photoArray = data.photoset.photo;
-	      console.log(photoArray);
-
-	      // Map square and large URLs onto photo array 
-	      function mapPhotoUrls(photos) {
-	      	return photos.map(function(photo){
-	      		// https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
-	      		photo.squareUrl = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_q.jpg";
-	      		photo.largeUrl = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_b.jpg";
-	      		return photo;
-	      	});
-	      }
-
-	      var photosWithUrls = mapPhotoUrls(photoArray);
-	      var photoContainer = $(".photos-container")[0];
-
-	      // Build divs with square thumbnails 
-	      for (i = 0; i < photosWithUrls.length; i++) {
-	      	var currentPicture = photosWithUrls[i];
-
-	      	var currentEl = "<a href='" + currentPicture.largeUrl + "'><figure><img src='" + currentPicture.squareUrl + "' alt='" + currentPicture.title + "'></figure></a>";
-	      	
-	      	$(photoContainer).append(currentEl);
-	      }
-	    }
-
-	  // If modal is open, 
-
-	  // On left and right arrows, move to previous or next image in image array
-	}
-
+	var flickrUserId = "{{site.flickr_user_ID}}";
 	buildGalleryFromFlickrAlbum("{{site.flickr_api_key}}", "{{page.albumID}}", "{{site.flickr_user_ID}}");
 </script>
