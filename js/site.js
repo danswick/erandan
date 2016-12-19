@@ -197,4 +197,41 @@ var destinations = {
     }
 }
 
+function buildGalleryFromFlickrAlbum(apiKey, albumID, userId){
+  // Build AJAX request 
+  var requestURL = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + apiKey + "&photoset_id=" + albumID + "&user_id=" + userId + "&format=json&nojsoncallback=1";
+
+  $.ajax({
+    url: requestURL,
+    type: "GET",
+    dataType: "JSON"
+  })
+  .done(function(data){ buildGallery(data) });
+    // On AJAX callback, iterate through images and 
+    function buildGallery(data) {
+      var photoArray = data.photoset.photo;
+      console.log(photoArray);
+
+      // Build divs with square thumbnails 
+
+      // On click, open a modal with full-sized image
+    }
+
+
+  // If modal is open, 
+
+    // On left and right arrows, move to previous or next image in image array
+}
+
 });
+
+
+
+
+
+
+
+
+
+
+

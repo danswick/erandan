@@ -7,6 +7,8 @@ url: "http://erandan.com" # the base hostname & protocol for your site
 twitter_username: 
 github_username:  
 future: true
+markdown: kramdown
+highlighter: rouge
 
 # Custom variables
 ceremony_time: "4:30pm"
@@ -17,5 +19,7 @@ reception_time: "6:30pm"
 reception_date: "Saturday, September 17th"
 reception_address: "2810 W Addison Street"
 
+flickr_api_key: "a3220b9a2d3de34088db8284cf1b65a9"
+flickr_user_ID: "87249310%40N00"
 
 # Build settings
