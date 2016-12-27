@@ -22,9 +22,6 @@
 
 	.modal {
 		position: fixed;
-		/*top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);*/
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -38,9 +35,12 @@
 	}
 
 	.modal-container {
-		position: relative;
-		top: 2em;
-		width: 90%;
+		max-height: calc(100% - 100px);
+		position: absolute;
+			top: 50%;
+			left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 1100px;
 		max-height: 90%;
 		margin: 0 auto;
 		padding: 5px 5px 5px 5px;
@@ -50,10 +50,19 @@
 		box-shadow: 0px 3px 19px -2px rgba(0,0,0,0.7);
 	}
 	.modal-container img {
-		max-height: 100%;
-		max-width: 100%;
 		display: block;
 		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	div.modal-container.vertical-image {
+		max-height: 90%;
+		width: auto;
+	}
+
+	.vertical-image img {
+		width: auto;
+		max-height: 83vh;
 	}
 
 	.modal-overlay {
@@ -108,9 +117,8 @@
 		img.thumbnail {
 			width: 100px;
 		}
-
-		.modal {
-			width: 100%;
+		.modal-container {
+			width: 310px;
 		}
 	
 	}
@@ -124,6 +132,9 @@
 		.thumbnail-container {
 			margin: 0px 5px 10px 5px;
 			vertical-align: top;
+		}
+		.modal-container {
+			width: 540px;
 		}
 	}
 
@@ -140,6 +151,9 @@
 		img.thumbnail {
 			width: 150px;
 		}
+		.modal-container {
+			width: 740px;
+		}
 	}
 
 	@media (min-width: 1000px) {
@@ -155,18 +169,26 @@
 			margin: 0px 8px 16px 8px;
 			vertical-align: top;
 		}
+		.modal-container {
+			width: 970px;
+		}		
+	}
+
+	@media (min-width: 1200px) {
+		.modal-container {
+			width: 1034px;
+		}
 	}
 </style>
 
 <div id="modal" class="modal closed">
-	<div class="modal-container">
+	<div id="modalContainer" class="modal-container">
 		<!-- <div class="modal-close"><span class="close thick rounded"></span></div> -->
-		<div class="modal-title"></div>
 		<img src="#">
+		<div class="modal-title"></div>
 		<div class="modal-image-description"></div>
 	</div>
 </div>
 <!-- <div class="modal-overlay closed" id="modalOverlay"></div> -->
-
 
 <script type="text/javascript" src="{{site.baseurl}}/js/photo-grid.js"></script>

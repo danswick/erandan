@@ -40,6 +40,8 @@ function buildGalleryFromFlickrAlbum(apiKey, albumID, userId){
       }
 
       setThumbnailClick();
+
+      $(photoContainer).append(albumAttribution);
     }
 
   // If modal is open, 
@@ -82,17 +84,24 @@ function setImageAndFlickrLink(el) {
 
 	var bigUrl = $(el).data().largeurl;
 	var imageIndex = $(el).data().index;
-	var $modalImageEl = $($('.modal-container img')[0]);
-	/*modalOverlay.classList.toggle('closed');*/
+	var modalImageEl = new Image();
+	var $modalImageEl = $(modalImageEl);
+	var $modalContainer = $('.modal-container');
+	$('.modal-container img')[0].remove();
 
 	// Add img element to modal content 
 	$modalImageEl.attr('src', bigUrl);
 	$modalImageEl.data('imageIndex', imageIndex);
+	$modalContainer.prepend($modalImageEl);
 	// Add link to flickr page to modal content 
 	// template -- https://www.flickr.com/photos/{flickr_user_id}/{photo_id}
 	var flickrLink = "<a target='_blank' href='https://www.flickr.com/photos/" + flickrUserId + "/" + $(el).data().id + "'>Flickr page</a>";
 
 	$('.modal-image-description').html(flickrLink);
+	$modalImageEl.load(function() {
+		isImagePortrait(this);
+	});
+	
 }
 
 function moveImage(leftOrRight) {
@@ -128,6 +137,73 @@ modal.addEventListener("click", function(){
 	$(document).off('keydown');
 	/*modalOverlay.classList.toggle('closed');*/
 });
+
+function isImagePortrait(imageInQuestion) {
+	var width = imageInQuestion.width;
+	var height = imageInQuestion.height;
+
+	if (width < height) {
+		$(imageInQuestion).closest('.modal-container').addClass('vertical-image');
+	} else {
+		$(imageInQuestion).closest('.modal-container').removeClass('vertical-image');
+	}
+}
+
+function resizeImageContainer(containerEl, imageInQuestion) {
+
+	// determine if image is landscape or portrait
+	// imageInQuestion.naturalWidth, imageInQuestion.naturalHeight
+
+	// switch maxWidth, maxHeight, auto, etc
+
+}
+
+function handleSwipeGesture(gestureElement) {
+	var touchstartX = 0;
+	var touchstartY = 0;
+	var touchendX = 0;
+	var touchendY = 0;
+
+	var gestureElementId = gestureElement.id;
+
+	var gesuredZone = document.getElementById(gestureElementId);
+
+	gesuredZone.addEventListener('touchstart', function(event) {
+	    touchstartX = event.changedTouches[0].screenX;
+	    touchstartY = event.changedTouches[0].screenY;
+	}, false);
+
+	gesuredZone.addEventListener('touchend', function(event) {
+	    touchendX = event.changedTouches[0].screenX;
+	    touchendY = event.changedTouches[0].screenY;
+	    handleGesure();
+	}, false); 
+
+	function handleGesure() {
+	    var swiped = 'swiped: ';
+	    if (touchendX < touchstartX) {
+	        moveImage('right');
+	        return 'left';
+	    }
+	    if (touchendX > touchstartX) {
+	        moveImage('left');
+	        return 'right';
+	    }
+	    if (touchendY < touchstartY) {
+	        return 'down';
+	    }
+	    if (touchendY > touchstartY) {
+	        return 'up';
+	    }
+	    if (touchendY == touchstartY) {
+	        return 'tap';
+	    }
+	}
+
+}
+
+handleSwipeGesture(document.getElementById('modalContainer'));
+
 
 
 

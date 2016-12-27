@@ -15,5 +15,6 @@ layout: default
 {% include photo-grid.html %}
 <script type="text/javascript">
 	var flickrUserId = "{{site.flickr_user_ID}}";
+	var albumAttribution = '<div class="album-attribution">Photographs &copy; {{page.attribution}}</div>';
 	buildGalleryFromFlickrAlbum("{{site.flickr_api_key}}", "{{page.albumID}}", "{{site.flickr_user_ID}}");
 </script>
