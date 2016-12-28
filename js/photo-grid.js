@@ -188,7 +188,7 @@ function handleSwipeGesture(gestureElement) {
 	function handleGesure() {
 	    var swiped = 'swiped: ';
 	    // make sure event isn't a pinch zoom gesture
-	    if (numTouchesStart <= 1 || numTouchesEnd <= 1) {
+	    if (numTouchesStart <= 1 && numTouchesEnd <= 1) {
 	    	// get horizontal direction and ensure there isn't more vertical change in direction than horizontal 
 	    	if (touchendX < touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
 	        moveImage('right');
