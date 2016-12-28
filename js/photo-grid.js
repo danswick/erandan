@@ -181,22 +181,26 @@ function handleSwipeGesture(gestureElement) {
 
 	function handleGesure() {
 	    var swiped = 'swiped: ';
-	    if (touchendX < touchstartX) {
+	    // make sure event isn't a pinch zoom gesture
+	    if (event.changedTouches.length == 1) {
+	    	// get horizontal direction and ensure there isn't more vertical change in direction than horizontal 
+	    	if (touchendX < touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
 	        moveImage('right');
 	        return 'left';
-	    }
-	    if (touchendX > touchstartX) {
-	        moveImage('left');
-	        return 'right';
-	    }
-	    if (touchendY < touchstartY) {
-	        return 'down';
-	    }
-	    if (touchendY > touchstartY) {
-	        return 'up';
-	    }
-	    if (touchendY == touchstartY) {
-	        return 'tap';
+		    }
+		    if (touchendX > touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
+		        moveImage('left');
+		        return 'right';
+		    }
+		    if (touchendY < touchstartY && (Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY))) {
+		        return 'down';
+		    }
+		    if (touchendY > touchstartY && (Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY))) {
+		        return 'up';
+		    }
+		    if (touchendY == touchstartY) {
+		        return 'tap';
+		    }
 	    }
 	}
 
