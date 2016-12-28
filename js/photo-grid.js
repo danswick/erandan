@@ -201,8 +201,6 @@ function handleSwipeGesture(gestureElement) {
 		    if (touchendY == touchstartY) {
 		        return 'tap';
 		    }
-	    } else {
-	    	event.preventDefault();
 	    }
 	}
 
