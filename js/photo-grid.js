@@ -175,13 +175,13 @@ function handleSwipeGesture(gestureElement) {
 	    touchstartY = event.changedTouches[0].screenY;
 	    // detect number of beginning touches. When user lifts fingers from multitouch,
 	    // 
-	    numTouches = event.changedTouchesStart.length;
+	    numTouchesStart = event.changedTouches.length;
 	}, false);
 
 	gesuredZone.addEventListener('touchend', function(event) {
 	    touchendX = event.changedTouches[0].screenX;
 	    touchendY = event.changedTouches[0].screenY;
-	    numTouches = event.changedTouchesEnd.length;
+	    numTouchesEnd = event.changedTouches.length;
 	    handleGesure();
 	}, false); 
 
