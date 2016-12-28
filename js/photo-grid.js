@@ -163,6 +163,7 @@ function handleSwipeGesture(gestureElement) {
 	var touchstartY = 0;
 	var touchendX = 0;
 	var touchendY = 0;
+	var numTouches = 0;
 
 	var gestureElementId = gestureElement.id;
 
@@ -171,6 +172,7 @@ function handleSwipeGesture(gestureElement) {
 	gesuredZone.addEventListener('touchstart', function(event) {
 	    touchstartX = event.changedTouches[0].screenX;
 	    touchstartY = event.changedTouches[0].screenY;
+	    numTouches = event.changedTouches.length;
 	}, false);
 
 	gesuredZone.addEventListener('touchend', function(event) {
@@ -182,7 +184,7 @@ function handleSwipeGesture(gestureElement) {
 	function handleGesure() {
 	    var swiped = 'swiped: ';
 	    // make sure event isn't a pinch zoom gesture
-	    if (event.changedTouches.length <= 1) {
+	    if (numTouches <= 1) {
 	    	// get horizontal direction and ensure there isn't more vertical change in direction than horizontal 
 	    	if (touchendX < touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
 	        moveImage('right');
