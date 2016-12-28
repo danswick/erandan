@@ -182,33 +182,33 @@ function handleSwipeGesture(gestureElement) {
 	    touchendX = event.changedTouches[0].screenX;
 	    touchendY = event.changedTouches[0].screenY;
 	    numTouchesEnd = event.changedTouches.length;
-	    handleGesure();
+	    
+	    if (numTouchesStart > 1 && numTouchesEnd > 1) {
+	    	return;
+	    } else if (numTouchesStart <= 1 && numTouchesEnd <= 1) {
+	    	handleGesure();
+	    }
 	}, false); 
 
 	function handleGesure() {
 	    var swiped = 'swiped: ';
-	    // make sure event isn't a pinch zoom gesture
-	    if (numTouchesStart > 1 && numTouchesEnd > 1) {
-	    	return;
-	    } else if (numTouchesStart <= 1 && numTouchesEnd <= 1) {
-	    	// get horizontal direction and ensure there isn't more vertical change in direction than horizontal 
-	    	if (touchendX < touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
-	        moveImage('right');
-	        return 'left';
-		    }
-		    if (touchendX > touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
-		        moveImage('left');
-		        return 'right';
-		    }
-		    if (touchendY < touchstartY && (Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY))) {
-		        return 'down';
-		    }
-		    if (touchendY > touchstartY && (Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY))) {
-		        return 'up';
-		    }
-		    if (touchendY == touchstartY) {
-		        return 'tap';
-		    }
+    	// get horizontal direction and ensure there isn't more vertical change in direction than horizontal 
+    	if (touchendX < touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
+        moveImage('right');
+        return 'left';
+	    }
+	    if (touchendX > touchstartX && (Math.abs(touchstartY - touchendY) < Math.abs(touchstartX - touchendX))) {
+	        moveImage('left');
+	        return 'right';
+	    }
+	    if (touchendY < touchstartY && (Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY))) {
+	        return 'down';
+	    }
+	    if (touchendY > touchstartY && (Math.abs(touchstartX - touchendX) < Math.abs(touchstartY - touchendY))) {
+	        return 'up';
+	    }
+	    if (touchendY == touchstartY) {
+	        return 'tap';
 	    }
 	}
 
