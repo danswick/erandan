@@ -163,7 +163,8 @@ function handleSwipeGesture(gestureElement) {
 	var touchstartY = 0;
 	var touchendX = 0;
 	var touchendY = 0;
-	var numTouches = 0;
+	var numTouchesStart = 0;
+	var numTouchesEnd = 0;
 
 	var gestureElementId = gestureElement.id;
 
@@ -172,12 +173,15 @@ function handleSwipeGesture(gestureElement) {
 	gesuredZone.addEventListener('touchstart', function(event) {
 	    touchstartX = event.changedTouches[0].screenX;
 	    touchstartY = event.changedTouches[0].screenY;
-	    numTouches = event.changedTouches.length;
+	    // detect number of beginning touches. When user lifts fingers from multitouch,
+	    // 
+	    numTouches = event.changedTouchesStart.length;
 	}, false);
 
 	gesuredZone.addEventListener('touchend', function(event) {
 	    touchendX = event.changedTouches[0].screenX;
 	    touchendY = event.changedTouches[0].screenY;
+	    numTouches = event.changedTouchesEnd.length;
 	    handleGesure();
 	}, false); 
 
