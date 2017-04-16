@@ -14,6 +14,12 @@ html {
 	box-sizing: border-box;
 }
 
+
+/* - - - - - HELPER CLASSES - - - - - - */
+
+.center-text { text-align: center; }
+.add-margin-top { margin-top: 2em; }
+
 /* - - - - - HEADER - - - - - - */
 
 .navbar-item a { text-decoration: none; }

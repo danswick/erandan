@@ -95,7 +95,8 @@ function setImageAndFlickrLink(el) {
 	$modalContainer.prepend($modalImageEl);
 	// Add link to flickr page to modal content 
 	// template -- https://www.flickr.com/photos/{flickr_user_id}/{photo_id}
-	var flickrLink = "<a target='_blank' href='https://www.flickr.com/photos/" + flickrUserId + "/" + $(el).data().id + "'>Flickr page</a>";
+	// Note that Flickr requries an `@` sign in their user ID's, which must be decoded
+	var flickrLink = "<a target='_blank' href='https://www.flickr.com/photos/" + decodeURIComponent(flickrUserId) + "/" + $(el).data().id + "'>Flickr page</a>";
 
 	$('.modal-image-description').html(flickrLink);
 	$modalImageEl.load(function() {

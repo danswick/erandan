@@ -3,9 +3,16 @@
 		display: inline-block;
 		font-size: 0;
 	}
-	.container { width: 100%; }
 	.photo-page-title {
-		padding: 1em;
+		padding: 1em 0em 0em 0em;
+		margin-bottom: 0;
+	}
+	.photo-page-subtitle {
+		margin-bottom: 1em;
+		font-weight: 300;
+	}
+	.photos-buttons {
+		margin-bottom: 3em;
 	}
 	img.thumbnail {
 		cursor: pointer;
@@ -16,6 +23,19 @@
 	}
 	.thumbnail-container img:hover {
 		opacity: 0.8;
+	}
+
+	.photos-content {
+		padding: 2em;
+	}
+
+	a.button.button-primary {
+		background-color: #A4BC82;
+		border: 1px solid #829961;
+	}
+	a.button.button-primary:hover, a.button.button-primary:visited, a.button.button-primary:focus {
+		background-color: #829961;
+		border: 1px solid #829961;
 	}
 
 	/* - - - MODAL STUFF - - - */
